@@ -1,0 +1,16 @@
+@mixin flare
+    animation: 3s flare 2s ease infinite
+    background: url("../images/btn-flare.png") no-repeat
+    position: absolute
+    top: 0
+    left: 57px
+    width: 70px
+    height: 100%
+
+    @keyframes flare
+        0%
+            left: -30px
+
+        100%
+            opacity: 0
+            left: 150%

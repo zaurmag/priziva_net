@@ -98,14 +98,8 @@
                 font-weight: 900
 
             &::before
-                animation: 3s flare 2s ease infinite
-                background: url("../images/btn-flare.png") no-repeat
                 content: ""
-                position: absolute
-                top: 0
-                left: 57px
-                width: 70px
-                height: 100%
+                @include flare
 
         &::before
             @include sprite($arrow-foward-down-white)
@@ -113,11 +107,3 @@
             position: absolute
             top: -55px
             right: -35px
-
-@keyframes flare
-    0%
-        left: -30px
-
-    100%
-        opacity: 0
-        left: 150%

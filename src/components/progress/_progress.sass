@@ -1,0 +1,26 @@
+.progress
+    display: flex
+
+    &__step
+        text-align: center
+        width: 100%
+
+        &::before
+            content: ""
+            display: block
+            height: 6px
+            border-radius: 3px
+            background-color: #e1e1e1
+            margin-bottom: 10px
+            width: 100%
+
+        &:not(:last-child)
+            margin-right: 12px
+
+        // Active state
+        &.is-active
+            color: $primary
+
+            &::before
+                background-color: $primary
+

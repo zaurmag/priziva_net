@@ -53,6 +53,17 @@ $check-sm-total-width: 212px;
 $check-sm-total-height: 159px;
 $check-sm-image: '../images/sprite.png';
 $check-sm: (168px, 48px, -168px, -48px, 10px, 8px, 212px, 159px, '../images/sprite.png', 'check-sm', );
+$dahsed-line-name: 'dahsed-line';
+$dahsed-line-x: 183px;
+$dahsed-line-y: 48px;
+$dahsed-line-offset-x: -183px;
+$dahsed-line-offset-y: -48px;
+$dahsed-line-width: 7px;
+$dahsed-line-height: 1px;
+$dahsed-line-total-width: 212px;
+$dahsed-line-total-height: 159px;
+$dahsed-line-image: '../images/sprite.png';
+$dahsed-line: (183px, 48px, -183px, -48px, 7px, 1px, 212px, 159px, '../images/sprite.png', 'dahsed-line', );
 $family-name: 'family';
 $family-x: 42px;
 $family-y: 101px;
@@ -111,7 +122,7 @@ $man-woman: (168px, 0px, -168px, 0px, 44px, 43px, 212px, 159px, '../images/sprit
 $spritesheet-width: 212px;
 $spritesheet-height: 159px;
 $spritesheet-image: '../images/sprite.png';
-$spritesheet-sprites: ($arrow-back-up-primary, $arrow-foward-down-white, $car, $check-sm, $family, $header-subtitle-left, $header-subtitle-right, $house, $man-woman, );
+$spritesheet-sprites: ($arrow-back-up-primary, $arrow-foward-down-white, $car, $check-sm, $dahsed-line, $family, $header-subtitle-left, $header-subtitle-right, $house, $man-woman, );
 $spritesheet: (212px, 159px, '../images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables

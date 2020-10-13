@@ -1,0 +1,57 @@
+.radio-btn
+    $self: &
+
+    &__input
+        display: none
+
+        &:checked
+            + #{$self}__label
+                &::after
+                    background-color: $primary
+                    border-radius: 50%
+                    content: ""
+                    display: block
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    left: -25px
+                    width: 9px
+                    height: 9px
+
+    &__label
+        background-color: $gray-600
+        border-radius: 5px
+        color: $white
+        cursor: pointer
+        display: block
+        font-size: 16px
+        padding: 2px 10px
+        margin-left: 30px
+        text-align: center
+        position: relative
+
+        &::before
+            border: 1px solid $primary
+            border-radius: 50%
+            content: ""
+            display: block
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: -29px
+            width: 17px
+            height: 17px
+
+        &--danger
+            background-color: $red
+
+        &--warning
+            background-color: $yellow
+
+        &--success
+            background-color: $green
+
+    &:not(:last-child)
+        margin-bottom: 15px
+
+

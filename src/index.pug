@@ -4,12 +4,64 @@ append variables
     - var title = 'Интерактивный тест, основанный на научных знаниях о мозге, когнитивистике и нейрофизиологии'
 
 block main
+    main#main
+        .quiz.form.pl-20
+            form#quizForm(novalidate)
+                .quiz__block
+                    h2.quiz__block-tlt
+                        span.d-block Пройди тест, выясни, что тормозит тебя больше всего,
+                        span.fw-500.fz-19 и получи набор мини-техник, чтобы исправить ситуацию
+
+                    .progress.mt-30
+                        - let i = 1;
+                        while i <= 6
+                            if i == 1
+                                .progress__step.is-active Вопрос 1 из 6
+                            else
+                                .progress__step
+                            - i++;
+
+                    header.quiz__header.mt-50
+                        .quiz__header-counter.mr-25 1
+                        h3.h4.quiz__title Я всегда пишу список целей на год, месяц, неделю, день. Обо мне можно сказать, что я знаю, чего хочу в жизни и как этого достичь.
+
+                    .quiz__quest-block
+                        .row.no-gutters
+                            .col-sm-auto.pr-60
+                                .radio-btn
+                                    input.radio-btn__input#quiz1-1(type="radio" name="quiz1")
+                                    label.radio-btn__label.radio-btn__label--danger(for="quiz1-1") нет, это не про меня
+
+                                .radio-btn
+                                    input.radio-btn__input#quiz1-2(type="radio" name="quiz1")
+                                    label.radio-btn__label.radio-btn__label--warning(for="quiz1-2") иногда я так делаю
+
+                                .radio-btn
+                                    input.radio-btn__input#quiz1-3(type="radio" name="quiz1")
+                                    label.radio-btn__label.radio-btn__label--success(for="quiz1-3") да, это про меня
 
 
+                            .col-sm.pl-2
+                                .card
+                                    .card__header
+                                        .card__title У тебя <span id="scoreCounter">0</span> баллов
+                                        p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
 
+                                    .card__body
+                                        p.card__small.mb-0 Пояснение к вопросу от сертифицированного тренера и лайф-коуча
 
+                                        .row.mt-25
+                                            .col-sm-auto.text-center
+                                                .card__img
+                                                    img.mb-15(src="./images/pavluk-d-s.png" alt="Павлюк Дмитрий Сергеевич")
+                                                .card__name Павлюк <br />Дмитрий Сергеевич
 
+                                            .col-sm
+                                                .card__text Сам факт планирования уже помогает в поиске ресурсов на исполнение. Если у тебя проблемы с навыком планирования, то в конце теста ты получишь мини-техники, которые помогут быстро сделать планирование приятной привычкой.
 
-
-
-
+                        .quiz__btns.text-center.mt-50
+                            .row.justify-content-center
+                                .col-sm-auto
+                                    button.btn-prev.btn.btn-secondary.btn-s48.px-25(type="button") < Предыдущий шаг
+                                .col-sm-auto
+                                    button.btn-next.btn.btn-secondary.btn-s48.px-25.is-active(type="button") Cледующий шаг >
