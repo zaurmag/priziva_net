@@ -31,6 +31,7 @@ $spacers: map-merge(
 		10: ($spacer * 0.625), // 10px
 		15: ($spacer * 0.9375), // 15px
 		20: ($spacer * 1.25), // 20px
+		25: ($spacer * 1.5625), // 25px
 		30: ($spacer * 1.875), // 30px
 		40: ($spacer * 2.5), // 40px
 		50: ($spacer * 3.125), // 50px
@@ -58,6 +59,8 @@ $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
+
+$gray-333: #333;
 
 $grays: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -147,3 +150,7 @@ $btn-border-radius-sm: 0;
 $btn-font-size: 0.875rem;
 $btn-font-size-sm: 0.875rem;
 $btn-font-size-lg: 1.125rem;
+
+// Bg
+$body-bg: #edeefe;
+$body-color: $gray-333;
