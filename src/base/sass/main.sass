@@ -3,49 +3,48 @@
    ========================================================================= */
 
 @import 'variables'
-//@import '../mixins/sass/sprite-img'
+@import '../../mixins/sass/sprite-img'
 @import '../../mixins/sass/sprite-svg'
 @import '../../mixins/sass/pos-center'
 @import '../../mixins/sass/pos-strech'
 @import '../../mixins/sass/responsive-title'
 @import '../../mixins/sass/letter-spacing'
+@import '../../mixins/sass/gradient'
 @import '../../vendor/bootstrap/bootstrap'
 @import '../../mixins/sass/font-face'
 
 /**
  * Base
  */
+@import './base'
 @import './fonts'
-// @import './base'
+@import './png-icons'
 @import './typography'
 
 /**
  * Static blocks
  */
-@import '../../components/wrapper/wrapper'
+@import '../../components/page/page'
 @import "../../components/header/header"
-@import "../../components/logo/logo"
-@import "../../components/menu/menu"
-@import "../../components/hamburger/hamburger"
-@import "../../components/breadcrumbs/breadcrumbs"
-@import "../../components/content/content"
-@import "../../components/module/module"
 @import '../../components/textblock/textblock'
-@import '../../components/pagination/pagination'
 @import "../../components/footer/footer"
 
 /**
  * Dev blocks
  */
-@import "../../components/preloader/preloader"
+@import "../../components/brain/brain"
+@import "../../components/white-wrap/white-wrap"
 
 
+
+/**
+ * Bootstrap
+ */
+@import "../../components/bootstrap/btn"
 
 
 /**
  * Libs styles
  */
-@import '../../vendor/magnific-popup/main'
-//@import '../libs/owl-carousel/owl.carousel'
-//@import '../libs/owl-carousel/owl.theme.default'
-@import '../../vendor/go-top/go-top'
+// @import '../../vendor/magnific-popup/main'
+
