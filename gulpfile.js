@@ -62,7 +62,7 @@ $.gulp.task('build', $.gulp.series(
 		'style:build',
 		'js:build',
 		'img:build',
-		// 'spriteImg:build'
+		'spriteImg:build',
 		'resources:build',
 	)),
 );

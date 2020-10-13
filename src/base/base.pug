@@ -45,42 +45,21 @@ html(lang="ru")
         script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
         <![endif]-->
 
-    body(class=pageClass)
+    body
         .wrapper
-
             .wrapper__content
-                //- Include header
+                //- Block header
                 include ../components/header/header
 
-                block top-position
-
+                //- Block main content
                 .container
-                    if(pageClass != 'homepage')
-                        //- Breadcrumbs
-                        nav.breadcrumbs
-                            ul.breadcrumbs__list
-                                li
-                                    a(href="/") Главная
-                                    span.breadcrumbs__divider /
+                    block main
 
-                                li.is-active #{title}
+                    //- Block footer
+                    include ../components/footer/footer
 
-                    .row
-                        block columns
-
-                block bottom-position
-
-            //- Include footer
-            include ../components/footer/footer
-
-        //- Include callback
-        //include ../components/callback/callback
-
-        .d-none
+        //.d-none
             include ../../dist/images/sprite.svg
-
-        a.go-top(href='#', style='display:none;')
-            +icon('arrow-up')
 
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
         script(src=`${baseDir}js/main.js`)
