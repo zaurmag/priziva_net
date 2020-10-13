@@ -19,7 +19,7 @@ h6 .h6
  */
 h1, .h1
     /* 36px - 24px */
-    @include responsive-tlt(24px, 36px)
+    @include responsive-tlt(24px, 44px)
 
 h2, .h2
     /* 30px - 22px */
@@ -27,19 +27,19 @@ h2, .h2
 
 h3, .h3
     /* 26px - 20px */
-    @include responsive-tlt(20px, 26px)
+    @include responsive-tlt(20px, 25px)
 
 h4, .h4
     /* 24px - 18px */
-    @include responsive-tlt(18px, 24px)
+    @include responsive-tlt(18px, 22px)
 
 h5, .h5
     /* 20px - 17px */
-    @include responsive-tlt(17px, 20px)
+    @include responsive-tlt(17px, 19px)
 
 h6, .h6
     /* 18px - 16px */
-    @include responsive-tlt(16px, 18px)
+    @include responsive-tlt(16px, 17px)
 
 
 /**
@@ -51,6 +51,18 @@ ol
     margin: 0
     padding: 0
 
+    &.style-check
+        li
+            position: relative
+            padding-left: 15px
+
+            &::before
+                @include sprite($check-sm)
+                content: ""
+                position: absolute
+                top: 9px
+                left: 0
+
 /**
  * Font size
  * Font weight
@@ -61,5 +73,11 @@ ol
 .fz-18
     font-size: 18px
 
-.fw-500
-    font-weight: 500
+.fw-700
+    font-weight: 700
+
+.lh-1-05
+    line-height: 1.05
+
+.lh-1-19
+    line-height: 1.19

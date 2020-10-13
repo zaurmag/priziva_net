@@ -1,16 +1,12 @@
 // Font
 $font-family-base: "MuseoSansCyrl", sans-serif;
 
-// Colors
-$blue: #435993;
-
 // Grid containers
 $container-max-widths: (
-	smm: 445px,
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1140px
+	sm: 480px,
+	md: 540px,
+	lg: 768px,
+	xl: 975px
 );
 
 // Links
@@ -91,6 +87,7 @@ $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 $dark-tan: #b18248;
+$greeny-blue: #58b8b3;
 
 $colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -113,7 +110,7 @@ $colors: map-merge(
 	$colors
 );
 
-$primary:       $blue;
+$primary:       $greeny-blue;
 $secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;

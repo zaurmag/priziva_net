@@ -1,0 +1,49 @@
+.brain
+    position: relative
+
+    &__callout
+        border-radius: 10px
+        background-color: #6489e1
+        display: inline-flex
+        color: $white
+        font-size: 19px
+        font-weight: 700
+        line-height: 1.05
+        padding: 7px 12px
+        position: relative
+        transform: translate(135px, 6px)
+
+        &::after
+            border-top: 24px solid #6489e1
+            border-left: 21px solid transparent
+            content: ""
+            position: absolute
+            bottom: -21px
+            left: 33px
+
+    &__icon
+        align-items: center
+        box-shadow: 0 0 16.6px 1.4px rgba(44, 35, 132, 0.74)
+        border: solid 1px #6489e1
+        border-radius: 50%
+        display: flex
+        justify-content: center
+        width: 85px
+        height: 85px
+        position: absolute
+
+        &--man-woman
+            bottom: 40px
+            left: -15px
+
+        &--family
+            bottom: -43px
+            left: 79px
+
+        &--car
+            bottom: -86px
+            left: 202px
+
+        &--house
+            right: -115px
+            bottom: -46px

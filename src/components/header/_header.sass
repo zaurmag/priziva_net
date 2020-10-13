@@ -1,2 +1,122 @@
 .header
+    @include linear-gradient(to right, #381d86, #193285)
+    color: $white
     margin-bottom: 30px
+    padding-top: 80px
+    padding-bottom: 80px
+
+    &__site-descr
+        color: #769cf8
+        font-size: 22px
+        line-height: 1.05
+
+        &::after
+            content: ""
+            display: block
+            width: 74px
+            height: 4px
+            border-radius: 1.4px
+            background-color: #6489e1
+            margin-top: 25px
+
+    &__title
+        text-transform: uppercase
+        font-weight: 900
+        line-height: 1.1
+        letter-spacing: 1.32px
+
+    &__subtitle
+        display: inline-flex
+        position: relative
+        padding-left: 18px
+        padding-right: 18px
+        padding-top: 3px
+        margin-bottom: 25px
+
+        &-dashed-line
+            background: url('../images/dashed-line.png') 0 0 repeat-x
+            display: block
+            position: absolute
+            top: 0
+            left: 15px
+            right: 15px
+            height: 1px
+
+        &::before
+            @include sprite($header-subtitle-left)
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 0
+
+        &::after
+            @include sprite($header-subtitle-right)
+            content: ""
+            position: absolute
+            top: 0
+            right: 0
+            z-index: 0
+
+    &__test-resourses
+        &-txt
+            line-height: 1.19
+            padding-left: 30px
+            position: relative
+
+            &::before
+                @include sprite($arrow-back-up-primary)
+                content: ""
+                position: absolute
+                left: -13px
+                top: -37px
+
+        .style-check
+            color: #6489e1
+            line-height: 1.13
+
+            li
+                &::before
+                    top: 5px
+
+    &__btn-block
+        position: relative
+        max-width: 375px
+
+        .btn
+            border-radius: 34px
+            color: $white
+            flex-direction: column
+            text-shadow: 0 0 2.8px #2a5d5b
+            font-size: 21px
+            position: relative
+            overflow: hidden
+
+            .text-uppercase
+                font-size: 20px
+                font-weight: 900
+
+            &::before
+                animation: 3s flare 2s ease infinite
+                background: url("../images/btn-flare.png") no-repeat
+                content: ""
+                position: absolute
+                top: 0
+                left: 57px
+                width: 70px
+                height: 100%
+
+        &::before
+            @include sprite($arrow-foward-down-white)
+            content: ""
+            position: absolute
+            top: -55px
+            right: -35px
+
+@keyframes flare
+    0%
+        left: -30px
+
+    100%
+        opacity: 0
+        left: 150%

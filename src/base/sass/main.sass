@@ -3,12 +3,13 @@
    ========================================================================= */
 
 @import 'variables'
-//@import '../mixins/sass/sprite-img'
+@import '../../mixins/sass/sprite-img'
 @import '../../mixins/sass/sprite-svg'
 @import '../../mixins/sass/pos-center'
 @import '../../mixins/sass/pos-strech'
 @import '../../mixins/sass/responsive-title'
 @import '../../mixins/sass/letter-spacing'
+@import '../../mixins/sass/gradient'
 @import '../../vendor/bootstrap/bootstrap'
 @import '../../mixins/sass/font-face'
 
@@ -16,7 +17,7 @@
  * Base
  */
 @import './fonts'
-// @import './base'
+@import './png-icons'
 @import './typography'
 
 /**
@@ -30,9 +31,12 @@
 /**
  * Dev blocks
  */
+@import "../../components/brain/brain"
 
-
-
+/**
+ * Bootstrap
+ */
+@import "../../components/bootstrap/btn"
 
 
 /**
