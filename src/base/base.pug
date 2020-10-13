@@ -46,17 +46,18 @@ html(lang="ru")
         <![endif]-->
 
     body
-        .wrapper
-            .wrapper__content
-                //- Block header
-                include ../components/header/header
+        .page
+            //- Block header
+            include ../components/header/header
 
-                //- Block main content
-                .container
-                    block main
+            //- Block main content
+            .container
+                .px-25
+                    .white-wrap
+                        block main
 
-                    //- Block footer
-                    include ../components/footer/footer
+                        //- Block footer
+                        include ../components/footer/footer
 
         //.d-none
             include ../../dist/images/sprite.svg
