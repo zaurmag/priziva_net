@@ -1,0 +1,33 @@
+.present
+    @include linear-gradient(to bottom, #381d85, #265c99)
+    border-radius: 5px
+    color: $white
+    width: 211px
+    position: relative
+
+    &::before
+        background: url("../images/present/bow.png") no-repeat
+        content: ""
+        position: absolute
+        top: -40px
+        right: -43px
+        width: 107px
+        height: 106px
+
+    &__title
+        color: #feffff
+        font-size: 22px
+        font-weight: 700
+        line-height: 1.59
+        text-align: center
+
+    &__footer
+        @include linear-gradient(to top, #381d85, #265c99)
+        border-radius: 0 0 5px 5px
+        padding: 9px
+        text-align: center
+        text-shadow: 0 0 3.7px rgba(20, 31, 61, 0.68)
+        font-weight: 300
+        line-height: 1.06
+        color: #feffff
+        overflow: hidden
