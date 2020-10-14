@@ -5,27 +5,27 @@
             text-align: center
             line-height: 0.96
 
-    &__header
-        align-items: center
-        display: flex
+        &-header
+            align-items: center
+            display: flex
 
-        &-counter
-            @include responsive-tlt(80px, 106.5px)
-            font-weight: 900
-            line-height: 0.25
-            text-align: center
-            color: #193085
-            position: relative
+            &-counter
+                @include responsive-tlt(80px, 106.5px)
+                font-weight: 900
+                line-height: 0.25
+                text-align: center
+                color: #193085
+                position: relative
 
-            &::after
-                @include linear-gradient(to bottom, #e0deed, $white)
-                content: ""
-                position: absolute
-                left: 50%
-                transform: translateX(-46%)
-                bottom: -77px
-                height: 54px
-                width: 88%
+                &::after
+                    @include linear-gradient(to bottom, #e0deed, $white)
+                    content: ""
+                    position: absolute
+                    left: 50%
+                    transform: translateX(-46%)
+                    bottom: -77px
+                    height: 54px
+                    width: 88%
 
     // Quiz question block
     &__quest-block
