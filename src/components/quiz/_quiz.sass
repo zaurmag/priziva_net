@@ -47,13 +47,73 @@
                 &.is-active
                     background-color: $primary
                     border-color: $primary
-                    position: relative
-                    overflow: hidden
 
                     &:focus
                         box-shadow: 0 0 0 0.2rem rgba($primary, .5)
 
-                &::before
-                    content: ""
-                    @include flare
+    /**
+     * Get phone
+     */
+    &__get-phone
+        &-tlt
+            color: #381c85
+            text-transform: uppercase
+            font-weight: 900
+
+        &-phone
+            position: absolute
+            left: -105px
+            bottom: -60px
+            z-index: 0
+
+        &-field
+            margin-top: -25px
+            padding-left: 120px
+            padding-right: 80px
+            position: relative
+
+            .form
+                &__group
+                    width: 100%
+                    max-width: 272px
+
+                &__label
+                    padding-left: 50px
+                    white-space: nowrap
+
+                &__control
+                    text-align: center
+
+            .btn
+                border-radius: 33px
+                text-shadow: 0 0 2.8px #336f6c
+                font-size: 18px
+                font-weight: 900
+                color: $white
+                text-transform: uppercase
+                padding-left: 35px
+                padding-right: 35px
+
+        &-bottom
+            p
+                color: #010101
+                font-weight: 300
+                line-height: 1.13
+
+    // Present
+    &__present
+        max-width: 211px
+        position: relative
+
+        &-arrdown
+            position: absolute
+            bottom: -5px
+            left: -86px
+
+        &-small
+            color: #373737
+            font-size: 12px
+            font-weight: 300
+            line-height: 1.08
+            text-align: center
 

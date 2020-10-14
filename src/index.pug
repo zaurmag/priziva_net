@@ -5,7 +5,7 @@ append variables
 
 block main
     main#main
-        .quiz.form.pl-20
+        .quiz.form.px-sm-20
             header.quiz__header.mb-50
                 h2.quiz__block-tlt
                     span.d-block Пройди тест, выясни, что тормозит тебя больше всего,
@@ -65,18 +65,61 @@ block main
                                 .col-sm-auto
                                     button.btn-prev.btn.btn-secondary.btn-s48.px-25(type="button") < Предыдущий шаг
                                 .col-sm-auto
-                                    button.btn-next.btn.btn-secondary.btn-s48.px-25.is-active(type="button") Cледующий шаг >
+                                    button.btn-next.btn.btn-secondary.btn-flare.btn-s48.px-25.is-active(type="button") Cледующий шаг >
 
                 .quiz__get-phone
-                    .row.justify-content-end
-                        .col-md-6
-                            h2.quiz__get-phone-tlt Система приступила к анализу результатов тестирования
+                    // Radio buttons
+                    .row.justify-content-end.no-gutters
+                        .col-md-auto.pr-30
+                            h2.h4.quiz__get-phone-tlt Система приступила к анализу <br />результатов тестирования
 
-                            h3.font-weight-normal Как вам удобнее <br />получить результат?
-                            .radio
-                                input.radio__input#whatsApp(type="radio" name="getResult")
-                                label.radio__label(for="whatsApp") Пришлите мне в <b>WhatsApp</b>
+                            .pl-35
+                                h3.font-weight-normal Как вам удобнее <br />получить результат?
+                                .radio.mb-10
+                                    input.radio__input#whatsApp(type="radio" name="getResult")
+                                    label.radio__label(for="whatsApp") Пришлите мне в <b>WhatsApp</b>
+
+                                .radio
+                                    input.radio__input#telegram(type="radio" name="getResult")
+                                    label.radio__label(for="telegram") Пришлите мне в <b>Telegram</b>
+
+                                .radio
+                                    input.radio__input#callMe(type="radio" name="getResult")
+                                    label.radio__label(for="callMe") Перезвоните мне, у меня <br />остались вопросы
 
 
-                        .col-md-4
+                        .col-md.quiz__present
+                            .present.mb-2
+                                .present__title Ваш подарок
+                                .present__body
+                                    img(src="./images/present/main.png" alt="Ваш подарок")
+
+                                .present__footer Результаты тестирования и набор техник-приемов: видео + PDF-файл
+
+                            p.quiz__present-small.mb-0 Вы получите результат <br /> сразу после регистрации
+                            img.quiz__present-arrdown(src="./images/quiz-get-phone-down.png" alt="")
+
+                    //- Phone field
+                    .quiz__get-phone-field
+                        img.quiz__get-phone-phone(src="./images/phone.png" alt="Как вам удобнее получить результат?")
+
+                        .row.align-items-end.no-gutters
+                            .col-md.pr-20
+                                .form__group
+                                    label.form__label(for="phone") Введите номер телефона <br /> и получите результаты тестирования
+                                    input.form__control.phone-mask--js#phone(type="tel" name="phone" placeholder="_ (___) ___-__-__" required)
+
+                            .col-md
+                                button.btn-submit--js.btn.btn-primary.btn-s67.btn-flare(type="submit") Получить результат
+
+                    //- Bottom
+                    .quiz__get-phone-bottom.mt-30
+                        //- Include spinner
+                        .spinner-block.mb-25
+                            include components/spinner-block/spinner-block
+
+                        .text-center
+                            p.mb-0 Результат тестирования и набор мини-техник для тебя сформирован.
+                            p.mb-0
+                                strong Он откроется сразу, после регистрации
 
