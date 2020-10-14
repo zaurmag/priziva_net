@@ -9,3 +9,13 @@
 
     &-s67
         height: 67px
+
+    &-flare
+        position: relative
+        overflow: hidden
+
+        &::before
+            content: ""
+            @include flare
+
+
