@@ -6,39 +6,40 @@ append variables
 block main
     main#main
         .quiz.form.pl-20
+            header.quiz__header.mb-50
+                h2.quiz__block-tlt
+                    span.d-block Пройди тест, выясни, что тормозит тебя больше всего,
+                    span.fw-500.fz-19 и получи набор мини-техник, чтобы исправить ситуацию
+
+                .progress.mt-30
+                    - let i = 1;
+                    while i <= 6
+                        if i === 1
+                            .progress__step.is-active Вопрос 1 из 6
+                        else
+                            .progress__step
+                        - i++;
+
             form#quizForm(novalidate)
-                .quiz__block
-                    h2.quiz__block-tlt
-                        span.d-block Пройди тест, выясни, что тормозит тебя больше всего,
-                        span.fw-500.fz-19 и получи набор мини-техник, чтобы исправить ситуацию
-
-                    .progress.mt-30
-                        - let i = 1;
-                        while i <= 6
-                            if i == 1
-                                .progress__step.is-active Вопрос 1 из 6
-                            else
-                                .progress__step
-                            - i++;
-
-                    header.quiz__header.mt-50
-                        .quiz__header-counter.mr-25 1
+                .quiz__block.d-none
+                    header.quiz__block-header
+                        .quiz__block-header-counter.mr-25 1
                         h3.h4.quiz__title Я всегда пишу список целей на год, месяц, неделю, день. Обо мне можно сказать, что я знаю, чего хочу в жизни и как этого достичь.
 
                     .quiz__quest-block
                         .row.no-gutters
                             .col-sm-auto.pr-60
-                                .radio-btn
-                                    input.radio-btn__input#quiz1-1(type="radio" name="quiz1")
-                                    label.radio-btn__label.radio-btn__label--danger(for="quiz1-1") нет, это не про меня
+                                .radio.radio--btn
+                                    input.radio__input#quiz1-1(type="radio" name="quiz1")
+                                    label.radio__label.radio__label--danger(for="quiz1-1") нет, это не про меня
 
-                                .radio-btn
-                                    input.radio-btn__input#quiz1-2(type="radio" name="quiz1")
-                                    label.radio-btn__label.radio-btn__label--warning(for="quiz1-2") иногда я так делаю
+                                .radio.radio--btn
+                                    input.radio__input#quiz1-2(type="radio" name="quiz1")
+                                    label.radio__label.radio__label--warning(for="quiz1-2") иногда я так делаю
 
-                                .radio-btn
-                                    input.radio-btn__input#quiz1-3(type="radio" name="quiz1")
-                                    label.radio-btn__label.radio-btn__label--success(for="quiz1-3") да, это про меня
+                                .radio.radio--btn
+                                    input.radio__input#quiz1-3(type="radio" name="quiz1")
+                                    label.radio__label.radio__label--success(for="quiz1-3") да, это про меня
 
 
                             .col-sm.pl-2
@@ -65,3 +66,17 @@ block main
                                     button.btn-prev.btn.btn-secondary.btn-s48.px-25(type="button") < Предыдущий шаг
                                 .col-sm-auto
                                     button.btn-next.btn.btn-secondary.btn-s48.px-25.is-active(type="button") Cледующий шаг >
+
+                .quiz__get-phone
+                    .row.justify-content-end
+                        .col-md-6
+                            h2.quiz__get-phone-tlt Система приступила к анализу результатов тестирования
+
+                            h3.font-weight-normal Как вам удобнее <br />получить результат?
+                            .radio
+                                input.radio__input#whatsApp(type="radio" name="getResult")
+                                label.radio__label(for="whatsApp") Пришлите мне в <b>WhatsApp</b>
+
+
+                        .col-md-4
+

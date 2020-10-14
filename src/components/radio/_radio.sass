@@ -1,5 +1,8 @@
-.radio-btn
+.radio
     $self: &
+
+    &:not(:last-child)
+        margin-bottom: 15px
 
     &__input
         display: none
@@ -19,16 +22,11 @@
                     height: 9px
 
     &__label
-        background-color: $gray-600
-        border-radius: 5px
-        color: $white
-        cursor: pointer
-        display: block
         font-size: 16px
-        padding: 2px 10px
+        font-weight: 300
         margin-left: 30px
-        text-align: center
         position: relative
+
 
         &::before
             border: 1px solid $primary
@@ -42,16 +40,28 @@
             width: 17px
             height: 17px
 
-        &--danger
-            background-color: $red
+    // Btns style
+    &--btn
+        #{$self}
+            &__label
+                background-color: $gray-600
+                border-radius: 5px
+                color: $white
+                cursor: pointer
+                display: block
+                text-align: center
+                padding: 2px 10px
+                font-weight: normal
 
-        &--warning
-            background-color: $yellow
+                &--danger
+                    background-color: $red
 
-        &--success
-            background-color: $green
+                &--warning
+                    background-color: $yellow
 
-    &:not(:last-child)
-        margin-bottom: 15px
+                &--success
+                    background-color: $green
+
+
 
 
