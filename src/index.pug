@@ -5,230 +5,61 @@ append variables
 
 block main
     main#main
-    .white-wrap
-        .quiz.form.px-sm-20
-            header.quiz__header.mb-50
-                h2.quiz__block-tlt
-                    span.d-block Пройди тест, выясни, что тормозит тебя больше всего,
-                    span.fw-500.fz-19 и получи набор мини-техник, чтобы исправить ситуацию
+        .white-wrap
+            .quiz.form.px-sm-20
+                //- Header
+                include ./components/quiz/quiz__header
 
                 .progress.mt-30
-                    - let i = 1;
-                    while i <= 6
-                        if i === 1
-                            .progress__step.is-active Вопрос 1 из 6
-                        else
-                            .progress__step
-                        - i++;
+                    include ./components/progress/progress
 
-            form#quizForm(novalidate)
-                .quiz__block
-                    header.quiz__block-header
-                        .quiz__block-header-counter.mr-25 1
-                        h3.h4.quiz__title Я всегда пишу список целей на год, месяц, неделю, день. Обо мне можно сказать, что я знаю, чего хочу в жизни и как этого достичь.
+                form#quizForm(novalidate)
+                    .quiz__block
+                        header.quiz__block-header
+                            .quiz__block-header-counter.mr-25 1
+                            h3.h4.quiz__title Я всегда пишу список целей на год, месяц, неделю, день. Обо мне можно сказать, что я знаю, чего хочу в жизни и как этого достичь.
 
-                    .quiz__quest-block
-                        .row.no-gutters
-                            .col-sm-auto.pr-60
-                                .radio.radio--btn
-                                    input.radio__input#quiz1-1(type="radio" name="quiz1")
-                                    label.radio__label.radio__label--danger(for="quiz1-1") нет, это не про меня
+                        //- Question block
+                        .quiz__quest-block
+                            include ./components/quiz/quiz__quest-block
 
-                                .radio.radio--btn
-                                    input.radio__input#quiz1-2(type="radio" name="quiz1")
-                                    label.radio__label.radio__label--warning(for="quiz1-2") иногда я так делаю
+                            .quiz__btns.text-center.mt-50
+                                .row.justify-content-center
+                                    .col-sm-auto
+                                        button.btn-prev.btn.btn-secondary.btn-s48.px-25(type="button") < Предыдущий шаг
+                                    .col-sm-auto
+                                        button.btn-next.btn.btn-secondary.btn-flare.btn-s48.px-25.is-active(type="button") Cледующий шаг >
+                    //- Get phone block
+                    .quiz__get-phone.mt-50
+                        include ./components/quiz/quiz__get-phone
 
-                                .radio.radio--btn
-                                    input.radio__input#quiz1-3(type="radio" name="quiz1")
-                                    label.radio__label.radio__label--success(for="quiz1-3") да, это про меня
+            //- Block footer
+            include ./components/footer/footer
 
+        .white-wrap.mt-20
+            .result.px-sm-20
+                .row.justify-content-center
+                    .col-md-10
+                        header.result__header
+                            i.icon.unlock
+                            h2.m-0.result__title Результат тестирования и мини-техники для тебя
 
-                            .col-sm.pl-2
-                                .card
-                                    .card__header
-                                        .card__title У тебя <span id="scoreCounter">0</span> баллов
-                                        p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
+                //- Staic text
+                .result__static.mt-50
+                    include ./components/result/result__static
 
-                                    .card__body
-                                        p.card__small.mb-0 Пояснение к вопросу от сертифицированного тренера и лайф-коуча
+                .result__container.mt-50
+                    h2.h4.result__container-tlt.mb-30 Результаты самодиагностики по 5 векторам <br />достижения целей и успеха
 
-                                        .row.mt-25
-                                            .col-sm-auto.text-center
-                                                .card__img
-                                                    img.mb-15(src="./images/pavluk-d-s.png" alt="Павлюк Дмитрий Сергеевич")
-                                                .card__name Павлюк <br />Дмитрий Сергеевич
+                    //- Blocks
+                    .result__container-blocks
+                        //- Block #1
+                        .result-block
+                            include ./components/result/bad/result-block__1
 
-                                            .col-sm
-                                                .card__text Сам факт планирования уже помогает в поиске ресурсов на исполнение. Если у тебя проблемы с навыком планирования, то в конце теста ты получишь мини-техники, которые помогут быстро сделать планирование приятной привычкой.
+                        //- Block #2
+                        .result-block.px-30
+                            include ./components/result/bad/result-block__2
 
-                        .quiz__btns.text-center.mt-50
-                            .row.justify-content-center
-                                .col-sm-auto
-                                    button.btn-prev.btn.btn-secondary.btn-s48.px-25(type="button") < Предыдущий шаг
-                                .col-sm-auto
-                                    button.btn-next.btn.btn-secondary.btn-flare.btn-s48.px-25.is-active(type="button") Cледующий шаг >
-
-                .quiz__get-phone.mt-50
-                    // Radio buttons
-                    .row.justify-content-end.no-gutters
-                        .col-md-auto.pr-30
-                            h2.h4.quiz__get-phone-tlt Система приступила к анализу <br />результатов тестирования
-
-                            .pl-35
-                                h3.font-weight-normal Как вам удобнее <br />получить результат?
-                                .radio.mb-10
-                                    input.radio__input#whatsApp(type="radio" name="getResult")
-                                    label.radio__label(for="whatsApp") Пришлите мне в <b>WhatsApp</b>
-
-                                .radio
-                                    input.radio__input#telegram(type="radio" name="getResult")
-                                    label.radio__label(for="telegram") Пришлите мне в <b>Telegram</b>
-
-                                .radio
-                                    input.radio__input#callMe(type="radio" name="getResult")
-                                    label.radio__label(for="callMe") Перезвоните мне, у меня <br />остались вопросы
-
-
-                        .col-md.quiz__present
-                            .present.mb-2
-                                .present__title Ваш подарок
-                                .present__body
-                                    img(src="./images/present/main.png" alt="Ваш подарок")
-
-                                .present__footer Результаты тестирования и набор техник-приемов: видео + PDF-файл
-
-                            p.quiz__present-small.mb-0 Вы получите результат <br /> сразу после регистрации
-                            img.quiz__present-arrdown(src="./images/quiz-get-phone-down.png" alt="")
-
-                    //- Phone field
-                    .quiz__get-phone-field
-                        img.quiz__get-phone-phone(src="./images/phone.png" alt="Как вам удобнее получить результат?")
-
-                        .row.align-items-end.no-gutters
-                            .col-md.pr-20
-                                .form__group
-                                    label.form__label(for="phone") Введите номер телефона <br /> и получите результаты тестирования
-                                    input.form__control.phone-mask--js#phone(type="tel" name="phone" placeholder="_ (___) ___-__-__" required)
-
-                            .col-md
-                                button.btn-submit--js.btn.btn-primary.btn-s67.btn-flare(type="submit") Получить результат
-
-                    //- Bottom
-                    .quiz__get-phone-bottom.mt-30
-                        //- Include spinner
-                        .spinner-block.mb-25
-                            include components/spinner-block/spinner-block
-
-                        .text-center
-                            p.mb-0 Результат тестирования и набор мини-техник для тебя сформирован.
-                            p.mb-0
-                                strong Он откроется сразу, после регистрации
-        //- Block footer
-        include ./components/footer/footer
-
-    .white-wrap.mt-20
-        .result.px-sm-20
-            .row.justify-content-center
-                .col-md-10
-                    header.result__header
-                        i.icon.unlock
-                        h2.m-0.result__title Результат тестирования и мини-техники для тебя
-
-            .result__static.mt-50
-                .row
-                    .col-md-auto
-                        img.img-fluid.result__static-img(src="./images/result/kouch.jpg" alt="Павлюк Дмитрий Сергеевич")
-
-                    .col-md-7.textblock
-                        p Приветствую, меня зовут Павлюк Дмитрий Сергеевич. Ты прошел тестирование и набрал <span class="text-primary fz-20 font-weight-bold"><span id="resultScore">ХХХХ</span> баллов</span>. Система выявила некоторые причины, которые затрудняют твое продвижение к целям. Я подготовил  короткие, но очень эффективные мини-техники, которые помогут тебе исправить ситуацию прямо сейчас.
-
-                        h3 Как пользоваться материалами?
-                        p Смотри видео, где я расказываю, какая техника подойдет в твоем случае и как ее применять. Или скачай ПДФ-файл — там все то же самое, только текстом. <br />Удачи, друг!
-
-            .result__container.mt-50
-                h2.h4.result__container-tlt.mb-30 Результаты самодиагностики по 5 векторам <br />достижения целей и успеха
-
-                .result__container-blocks
-                    //- Block #1
-                    .result-block
-                        .result-block__title Планирование и Декомпозиция целей
-
-                        .row
-                            .col-md-auto
-                                img(src="./images/result-block/bad/itog-testirovaniia.jpg" alt="Итоги тестирования")
-
-                            .col-md.textblock
-                                h3.h5.mb-1 Итоги тестирования
-                                p.mb-0 Ты нуждаешься в улучшении навыков планирования и декомпозиции. Это очень сильно ограничивает реализацию твоего потенциала.
-                                p.mb-0 Если ты научишься правильно ставить цель и освоишь технику декомпозиции, то самая большая мечта начнет осуществляться.
-                                p.mb-0 Я подготовил для тебя короткие мини-упражнения, которую ты можешь применить уже сегодня и получить практические навыки планирования и декомпозиции.
-
-                        h3.h6.text-cobalt.position-relative.mt-40
-                            img.bad-result-arrow-down-1(src="./images/result-block/bad/bad-result-arrow-down-1.png" alt="")
-                            | Скорее смотри это видео и выполняй задания. <br /> Не жди, начинай делать прямо сейчас.
-
-                        .row.align-items-center
-                            .col-md-auto
-                                a.video-stub(href="#")
-                                    img.img-fluid(src="./images/result-block/bad/video-stub.jpg" alt="Скорее смотри это видео и выполняй задания.")
-                            .col-md-1.textblock
-                                p.m-0 или
-
-                            .col-md.text-center
-                                a.font-weight-bold.fz-14(href="#")
-                                    i.icon.pdf
-                                    span.d-block.mt-1 Скачать технику <br />в PDF-формате
-
-                        .mt-15
-                            a.d-flex.align-items-center.fz-14(href="#" target="_blank")
-                                i.icon.telegram
-                                span.ml-2 Вступить в группу->>
-
-                    //- Block #2
-                    .result-block.px-30
-                        .result-block__title.result-block__title--simple Сложно меняться в одиночку!
-
-                        .row
-                            .col-md-auto
-                                img.img-fluid(src="./images/result-block/bad/slozhno-meniatsia.jpg" alt="Сложно меняться в одиночку")
-
-                            .col-md.textblock
-                                p.mb-0 Дорогие мои и любимые, к сожалению, я не могу выдать больше полезностей в рамках этого формата. Но я хорошо понимаю, что меняться одному сложно, нужна поддержка. Все становится гораздо легче, когда рядом люди с такими же задачами, как у тебя, и вы можете поддерживать друг друга.
-                                h3.h6.text-cobalt.mt-1 Специально для тебя я создал бесплатную рабочую группу в Телеграме.
-
-
-                        .result-block__bottom-bordered
-                            .row.ml-n100.no-gutters
-                                .col-md-auto
-                                    img.img-fluid(src="./images/result-block/bad/ty-poluchish.png" alt="Там ты получишь")
-
-                                .col-md.textblock.pl-15
-                                    p.fw-900.mb-0 Там ты получишь:
-                                    ol
-                                        li Методики, работающие техники и советы, как менять себя легче.
-                                        li Много общения с людьми, которые хотят добиться больших, интересных целей.
-                                        li Поддержку. Честную обратную связь. Это важно и помогает намного быстрее двигаться вперед.
-
-                                    p.mt-25.mb-0.position-relative
-                                        strong Жми и вступай в группу прямо сейчас!
-                                        img.bad-result-arrow-down-2(src="./images/result-block/bad/bad-result-arrow-down-2.png" alt="")
-
-                            .mt-30.text-center
-                                a.btn.btn-primary.btn-s67.btn-flare.px-20(href="#" target="_blank")
-                                    i.icon.telegram-md.mr-20
-                                    | Вступить в группу
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //- Block footer
-        include ./components/footer/footer
+            //- Block footer
+            include ./components/footer/footer
