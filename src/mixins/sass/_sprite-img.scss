@@ -42,6 +42,17 @@ $car-total-width: 251px;
 $car-total-height: 196px;
 $car-image: '../images/sprite.png';
 $car: (49px, 153px, -49px, -153px, 60px, 30px, 251px, 196px, '../images/sprite.png', 'car', );
+$check-light-name: 'check-light';
+$check-light-x: 210px;
+$check-light-y: 156px;
+$check-light-offset-x: -210px;
+$check-light-offset-y: -156px;
+$check-light-width: 28px;
+$check-light-height: 23px;
+$check-light-total-width: 251px;
+$check-light-total-height: 196px;
+$check-light-image: '../images/sprite.png';
+$check-light: (210px, 156px, -210px, -156px, 28px, 23px, 251px, 196px, '../images/sprite.png', 'check-light', );
 $check-sm-name: 'check-sm';
 $check-sm-x: 241px;
 $check-sm-y: 94px;
@@ -188,7 +199,7 @@ $unlock: (210px, 48px, -210px, -48px, 40px, 41px, 251px, 196px, '../images/sprit
 $spritesheet-width: 251px;
 $spritesheet-height: 196px;
 $spritesheet-image: '../images/sprite.png';
-$spritesheet-sprites: ($arrow-back-up-primary, $arrow-foward-down-white, $car, $check-sm, $dahsed-line, $family, $header-subtitle-left, $header-subtitle-right, $house, $like, $man-woman, $pdf, $smile, $telegram-md, $telegram, $unlock, );
+$spritesheet-sprites: ($arrow-back-up-primary, $arrow-foward-down-white, $car, $check-light, $check-sm, $dahsed-line, $family, $header-subtitle-left, $header-subtitle-right, $house, $like, $man-woman, $pdf, $smile, $telegram-md, $telegram, $unlock, );
 $spritesheet: (251px, 196px, '../images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
