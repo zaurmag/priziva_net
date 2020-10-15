@@ -7,7 +7,7 @@ h4, .h4,
 h5, .h5,
 h6 .h6
     margin: 0 0 20px
-    line-height: 1.2
+    line-height: 1.25
     font-weight: 700
 
     &:not(:first-child)
@@ -38,8 +38,8 @@ h5, .h5
     @include responsive-tlt(17px, 19px)
 
 h6, .h6
-    /* 18px - 16px */
-    @include responsive-tlt(16px, 17px)
+    /* 16px */
+    font-size: 16px
 
 
 /**
@@ -76,8 +76,14 @@ ol
 .fz-19
     font-size: 19px
 
+.fz-20
+    font-size: 20px
+
 .fw-500
     font-weight: 500
+
+.fw-900
+    font-weight: 900 !important
 
 .lh-1-05
     line-height: 1.05

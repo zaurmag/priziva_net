@@ -1,0 +1,42 @@
+.result
+    &__header
+        display: flex
+
+        .icon
+            flex-shrink: 0
+            margin-right: 20px
+            margin-top: 26px
+
+    &__title
+        border-bottom: 1px solid #959595
+        color: #b1b1b1
+        line-height: 1.17
+        padding-bottom: 30px
+
+    // Static block
+    &__static
+        &-img
+            border: 1px solid $primary
+            border-radius: 5px
+            padding: 5px
+
+        h3,
+        .h3
+            color: #391d85
+            font-size: 20px
+            margin-top: 0
+            margin-bottom: 10px
+
+    // Container
+    &__container
+        @include linear-gradient(to right, #3b1d86, #265c99)
+        border-radius: 5px
+        padding: 35px 50px
+
+        &-tlt
+            color: $primary
+            text-transform: uppercase
+            font-weight: 900
+            line-height: 1.18
+            text-align: center
+

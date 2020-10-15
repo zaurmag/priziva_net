@@ -1,0 +1,54 @@
+.result-block
+    background-color: $white
+    border-radius: 5px
+    padding: 20px 50px 50px
+    position: relative
+
+    &:not(:last-child)
+        margin-bottom: 27px
+
+    &__title
+        border-radius: 5px
+        background-color: #6489e1
+        color: #feffff
+        display: inline-flex
+        font-size: 20px
+        font-weight: 700
+        line-height: 0.9
+        padding: 10px 45px
+        margin-left: -59px
+        margin-bottom: 20px
+
+        &--simple
+            background-color: transparent
+            display: block
+            padding: 0
+            line-height: normal
+            color: $primary
+            text-transform: uppercase
+            margin: 20px 0
+            font-size: 22px
+            font-weight: 900
+            text-align: center
+
+    .bad-result-arrow-down-1
+        position: absolute
+        top: 27px
+        left: 50%
+        transform: translateX(22px)
+
+    &__bottom-bordered
+        border: 1px solid $primary
+        border-radius: 5px
+        padding: 25px
+
+        .btn
+            border-radius: 33.5px
+            color: #feffff
+            font-size: 20px
+            font-weight: 700
+
+    .bad-result-arrow-down-2
+        position: absolute
+        top: 8px
+        right: 90px

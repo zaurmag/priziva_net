@@ -92,6 +92,7 @@ $teal:    #20c997;
 $cyan:    #17a2b8;
 $dark-tan: #b18248;
 $greeny-blue: #58b8b3;
+$cobalt: #3a1e86;
 
 $colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -123,6 +124,7 @@ $danger:        $red;
 $light:         $gray-100;
 $dark:          $gray-800;
 $dark-tan: $dark-tan;
+$cobalt: $cobalt;
 
 $theme-colors: ();
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -136,7 +138,7 @@ $theme-colors: map-merge(
 		"danger":     $danger,
 		"light":      $light,
 		"dark":       $dark,
-		"dark-tan":   $dark-tan
+		"cobalt":     $cobalt
 	),
 	$theme-colors
 );
@@ -155,3 +157,10 @@ $btn-font-size-lg: 1.125rem;
 // Bg
 $body-bg: #edeefe;
 $body-color: $gray-333;
+$line-height-base: 1.14;
+
+// Links
+// $link-color:                              theme-color("primary") !default;
+$link-decoration: underline;
+// $link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration: none;
