@@ -1,0 +1,32 @@
+.row.no-gutters
+    .col-sm-auto.pr-60
+        .radio.radio--btn
+            input.radio__input#quiz1-1(type="radio" name="quiz1")
+            label.radio__label.radio__label--danger(for="quiz1-1") нет, это не про меня
+
+        .radio.radio--btn
+            input.radio__input#quiz1-2(type="radio" name="quiz1")
+            label.radio__label.radio__label--warning(for="quiz1-2") иногда я так делаю
+
+        .radio.radio--btn
+            input.radio__input#quiz1-3(type="radio" name="quiz1")
+            label.radio__label.radio__label--success(for="quiz1-3") да, это про меня
+
+
+    .col-sm.pl-2
+        .card
+            .card__header
+                .card__title У тебя <span id="scoreCounter">0</span> баллов
+                p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
+
+            .card__body
+                p.card__small.mb-0 Пояснение к вопросу от сертифицированного тренера и лайф-коуча
+
+                .row.mt-25
+                    .col-sm-auto.text-center
+                        .card__img
+                            img.mb-15(src="./images/pavluk-d-s.png" alt="Павлюк Дмитрий Сергеевич")
+                        .card__name Павлюк <br />Дмитрий Сергеевич
+
+                    .col-sm
+                        .card__text Сам факт планирования уже помогает в поиске ресурсов на исполнение. Если у тебя проблемы с навыком планирования, то в конце теста ты получишь мини-техники, которые помогут быстро сделать планирование приятной привычкой.
