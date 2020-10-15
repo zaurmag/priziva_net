@@ -1,4 +1,4 @@
-import './jquery.magnific-popup';
+import 'magnific-popup';
 
 jQuery(document).ready(($) => {
 	/* Magnific popup init
