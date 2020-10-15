@@ -59,6 +59,7 @@
   "dependencies": {
     "bootstrap": "latest",
     "gulp-favicons": "latest",
+    "js-plugin-circliful": "^2.0.15",
     "magnific-popup": "latest",
     "owl.carousel": "latest"
   }
