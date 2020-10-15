@@ -1,7 +1,12 @@
-figure.chart-three.animate
-    svg(role='img' xmlns='http://www.w3.org/2000/svg')
-        title [title here]
-        desc [long description here]
-        circle.circle-background
-        circle.circle-foreground
-    figcaption 75% of all males like donuts.
+#spinnerBlockCounter.spinner-block__counter 0%
+
+i.spinner-block__icon.spinner-block__icon--js.icon.check-light
+
+svg.spinner-block__svg(xmlns='http://www.w3.org/2000/svg' width='98' height='98' viewBox='0 0 100 100')
+    defs
+        lineargradient#gradient(x1='0%' y1='0%' x2='0%' y2='100%')
+            stop(offset='0%' stop-color='#f4873e')
+            stop(offset='100%' stop-color='#ffef3b')
+    circle(cx='50' cy='50' r='43' stroke-linecap="round" stroke='url(#gradient)' stroke-width='11' fill='none' transform='rotate(90 50 50)')
+
+img.spinner-block__arrow.spinner-block__arrow--js(src="./images/quiz-get-phone-up.png" alt="")
