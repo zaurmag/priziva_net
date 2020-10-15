@@ -1,0 +1,20 @@
+mixin result-block(title, img, text, footer)
+    .result-block__title= title
+    .row
+        .col-md-auto
+            img(src=`./images/result-block/good/${img}.jpg` alt= title)
+
+        .col-md.textblock
+            p.mb-0= text
+
+            .result-block__footer.mt-2
+                img.img-fluid(src="./images/result-block/good/result-block-good-arrow.png" alt="")
+                .d-flex.justify-content-end.align-items-center.text-right
+                    p.mb-0= footer
+
+                    .result-block__like.ml-10
+                        i.icon.smile
+                        i.icon.like
+
+
+

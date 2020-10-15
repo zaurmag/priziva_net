@@ -1,7 +1,7 @@
 .result-block
     background-color: $white
     border-radius: 5px
-    padding: 20px 50px 50px
+    padding: 20px 50px 25px
     position: relative
 
     &:not(:last-child)
@@ -52,3 +52,21 @@
         position: absolute
         top: 8px
         right: 90px
+
+    &__footer
+        text-align: center
+
+        p
+            font-size: 16px
+            font-weight: 500
+            color: $black
+
+    &__like
+        position: relative
+
+        .icon
+            &.smile
+                position: absolute
+                top: -12px
+                left: -4px
+

@@ -1,4 +1,5 @@
 extends ./base/base
+include ./components/result/good/result-block
 
 append variables
     - var title = 'Интерактивный тест, основанный на научных знаниях о мозге, когнитивистике и нейрофизиологии'
@@ -36,9 +37,10 @@ block main
             //- Block footer
             include ./components/footer/footer
 
+        //- Result block - BAD
         .white-wrap.mt-20
             .result.px-sm-20
-                .row.justify-content-center
+                .row.justify-content-center.no-gutters
                     .col-md-10
                         header.result__header
                             i.icon.unlock
@@ -63,3 +65,39 @@ block main
 
             //- Block footer
             include ./components/footer/footer
+
+        //- Result block - GOOD
+        .white-wrap.mt-20
+           .result.px-sm-20
+               .row.justify-content-center.no-gutters
+                   .col-md-10
+                       header.result__header
+                           i.icon.unlock
+                           h2.m-0.result__title Результат тестирования и мини-техники для тебя
+
+               //- Staic text
+               .result__static.mt-50
+                   include ./components/result/result__static
+
+               .result__container.mt-50
+                   h2.h4.result__container-tlt.mb-30 Результаты самодиагностики по 5 векторам <br />достижения целей и успеха
+
+                   //- Blocks
+                   .result__container-blocks
+                       //- Block #1
+                       .result-block
+                           +result-block('Планирование и Декомпозиция целей', 'planirovanie-dekomp-tcelei', 'Ты выглядишь как человек, который умеет планировать и делает это часто и на автомате. Это очень важный навык, который помогает добиваться задуманного. Также ты умеешь эффективно разбивать большую цель на более мелкие подзадачи.', 'У тебя отличные шансы преуспеть!')
+
+                       .result-block
+                           +result-block('Волшебный пендель', 'volshebnyi-pendel', 'Поздравляю! Ты принадлежишь к тем 2% очень целеустремленных людей, которые умеют управлять собой и могут мотивировать себя самостоятельно. И я по-хорошему тебе завидую, ведь таких людей очень мало. Буду рад познакомиться с тобой лично.', 'У тебя большие шансы достичь небывалых высот и даже стать президентом!')
+                       .result-block
+                           +result-block('Отсутствие новизны', 'otsutstvie-novizny', 'Отлично! По итогам теста я вижу, что ты считаешь свою жизнь эмоциональной, яркой и насыщенной. Разнообразие в жизни придает тебе дополнительную энергию для продвижения к своим целям. Я рад, что у тебя  в этом отношении все хорошо.', 'Твоя эффективность — 100%. Ты способен быстро достигать целей, добиваться успеха!')
+
+                       .result-block
+                           +result-block('Навыки социального взаимодействия', 'navyki-sotcialnogo-vzaimodeistviia', 'Превосходно! Ты легко находишь общий язык с людьми. У тебя широкий круг общения, есть с кем посоветоваться и от кого получить поддержку.', 'Ты счастливый человек!')
+
+                       .result-block
+                           +result-block('Энергия и спорт', 'energiia-i-sport', 'Молодец! Я рад, что у тебя все здорово. Судя по ответам, ты спортивный, энергичный человек. Большинство успешных людей занимаются спортом. И это не просто так. Спорт действительно дает ту базовую жизненную энергетику, которая позволяет людям добиваться больших результатов.', 'У тебя сформированы базовые навыки для достижения успеха!')
+
+           //- Block footer
+           include ./components/footer/footer
