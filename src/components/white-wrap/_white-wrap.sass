@@ -6,3 +6,24 @@
     margin-top: -60px
     position: relative
     z-index: 1
+
+    &--no-active
+        animation: 2s animateTop ease infinite
+        opacity: 0.74
+        position: absolute
+        width: 100%
+        max-width: 895px
+
+        .footer
+            display: none
+
+
+@keyframes animateTop
+    0%
+        transform: translateY(-20px)
+
+    50%
+        transform: translateY(40px)
+
+    100%
+        transform: translateY(-20px)

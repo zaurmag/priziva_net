@@ -5,6 +5,7 @@ append variables
 
 block main
     main#main
+    .white-wrap
         .quiz.form.px-sm-20
             header.quiz__header.mb-50
                 h2.quiz__block-tlt
@@ -122,4 +123,20 @@ block main
                             p.mb-0 Результат тестирования и набор мини-техник для тебя сформирован.
                             p.mb-0
                                 strong Он откроется сразу, после регистрации
+        //- Block footer
+        include ./components/footer/footer
 
+    .white-wrap.mt-20
+        .result
+            .row.justify-content-center
+                .col-md-10
+                    header.result__header
+                        i.icon.unlock
+                        h2.result__title Результат тестирования и мини-техники для тебя
+
+            .result__static
+
+
+
+        //- Block footer
+        include ./components/footer/footer
