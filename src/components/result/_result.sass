@@ -31,7 +31,9 @@
     &__container
         @include linear-gradient(to right, #3b1d86, #265c99)
         border-radius: 5px
-        padding: 35px 50px
+        padding: 25px 30px
+        @include media-breakpoint-up(lg)
+            padding: 35px 50px
 
         &-tlt
             color: $primary
