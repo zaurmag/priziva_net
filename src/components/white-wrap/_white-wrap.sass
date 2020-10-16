@@ -1,11 +1,17 @@
 .white-wrap
-    border-radius: 3px
-    box-shadow: 0 0 27px 0 rgba(43, 95, 153, 0.11)
     background-color: $white
-    padding: 40px
-    margin-top: -60px
     position: relative
+    padding: 30px
     z-index: 1
+    @include media-breakpoint-up(sm)
+        border-radius: 3px
+        box-shadow: 0 0 27px 0 rgba(43, 95, 153, 0.11)
+        padding: 20px
+    @include media-breakpoint-up(lg)
+        padding: 35px
+    @include media-breakpoint-up(xl)
+        padding: 40px
+        margin-top: -60px
 
     &--no-active
         animation: 2s animateTop ease infinite

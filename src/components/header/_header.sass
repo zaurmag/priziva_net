@@ -1,15 +1,34 @@
 .header
     @include linear-gradient(to right, #381d86, #193285)
     color: $white
-    padding-top: 80px
-    padding-bottom: 80px
+    padding-top: 30px
+    padding-bottom: 30px
     position: relative
     z-index: 0
+    @include media-breakpoint-up(sm)
+        padding-top: 40px
+        padding-bottom: 40px
+    @include media-breakpoint-up(md)
+        padding-top: 50px
+        padding-bottom: 50px
+    @include media-breakpoint-up(lg)
+        padding-top: 60px
+        padding-bottom: 60px
+    @include media-breakpoint-up(xl)
+        padding-top: 80px
+        padding-bottom: 80px
 
     &__site-descr
         color: #769cf8
-        font-size: 22px
-        line-height: 1.05
+        font-size: 16px
+        line-height: normal
+        @include media-breakpoint-up(sm)
+            font-size: 18px
+        @include media-breakpoint-up(md)
+            font-size: 20px
+            line-height: 1.05
+        @include media-breakpoint-up(lg)
+            font-size: 22px
 
         &::after
             content: ""
@@ -18,13 +37,16 @@
             height: 4px
             border-radius: 1.4px
             background-color: #6489e1
-            margin-top: 25px
+            margin-top: 15px
+            @include media-breakpoint-up(sm)
+                margin-top: 25px
 
     &__title
         text-transform: uppercase
         font-weight: 900
-        line-height: 1.1
         letter-spacing: 1.32px
+        @include media-breakpoint-up(lg)
+            line-height: 1.1
 
     &__subtitle
         display: inline-flex
@@ -89,15 +111,26 @@
             color: $white
             flex-direction: column
             text-shadow: 0 0 2.8px #2a5d5b
-            font-size: 21px
+            font-size: 18px
+            @include media-breakpoint-up(sm)
+                font-size: 21px
 
             .text-uppercase
-                font-size: 20px
+                font-size: 16px
                 font-weight: 900
+                @include media-breakpoint-up(sm)
+                    font-size: 20px
 
         &::before
-            @include sprite($arrow-foward-down-white)
+            @include sprite($arrow-foward-down-white-mobile)
             content: ""
             position: absolute
-            top: -55px
-            right: -35px
+            top: -60px
+            right: -5px
+            z-index: 2
+            pointer-events: none
+            @include media-breakpoint-up(sm)
+                @include sprite($arrow-foward-down-white)
+                pointer-events: all
+                top: -55px
+                right: -35px

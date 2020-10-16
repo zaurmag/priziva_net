@@ -15,10 +15,14 @@
                     content: ""
                     display: block
                     position: absolute
-                    top: 6px
+                    top: 11px
                     left: -25px
-                    width: 9px
-                    height: 9px
+                    width: 11px
+                    height: 11px
+                    @include media-breakpoint-up(lg)
+                        top: 6px
+                        width: 9px
+                        height: 9px
 
     &__label
         font-size: 16px
@@ -35,10 +39,14 @@
             content: ""
             display: block
             position: absolute
-            top: 2px
+            top: 7px
             left: -29px
-            width: 17px
-            height: 17px
+            width: 20px
+            height: 20px
+            @include media-breakpoint-up(lg)
+                top: 2px
+                width: 17px
+                height: 17px
 
     // Btns style
     &--btn
@@ -50,8 +58,12 @@
                 cursor: pointer
                 display: block
                 text-align: center
-                padding: 4px 10px
+                padding: 5px 15px
                 font-weight: normal
+                font-size: 20px
+                @include media-breakpoint-up(lg)
+                    padding: 4px 10px
+                    font-size: 16px
 
                 &--danger
                     background-color: $red

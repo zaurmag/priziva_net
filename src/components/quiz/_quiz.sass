@@ -29,7 +29,15 @@
 
     // Quiz question block
     &__quest-block
-        margin-top: 66px
+        margin-top: 30px
+        @include media-breakpoint-up(sm)
+            margin-top: 35px
+        @include media-breakpoint-up(md)
+            margin-top: 45px
+        @include media-breakpoint-up(lg)
+            margin-top: 55px
+        @include media-breakpoint-up(xl)
+            margin-top: 66px
 
     // Buttons
     &__btns
