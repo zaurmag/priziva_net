@@ -16,7 +16,7 @@ block main
 
                 form#quizForm(novalidate)
                     //- ====================== Questions ====================================
-                    .quiz__block.d-none
+                    .quiz__block.mt-30
                         header.quiz__block-header
                             .quiz__block-header-counter.mr-25 1
                             h3.h4.quiz__title.mb-0 Я всегда пишу список целей на год, месяц, неделю, день. Обо мне можно сказать, что я знаю, чего хочу в жизни и как этого достичь.
@@ -32,6 +32,7 @@ block main
                                             button.btn-prev.btn.btn-secondary.btn-s48.px-sm-25(type="button") < Назад
                                         .col-lg-auto.col-6.px-0.px-lg-15
                                             button.btn-next.btn.btn-secondary.btn-flare.btn-s48.px-sm-25.is-active(type="button") Cледующий шаг >
+
                     //- ===================== Get phone block ======================================
                     .quiz__get-phone.mt-30
                         include ./components/quiz/quiz__get-phone

@@ -24,8 +24,9 @@
         font-size: 12px
         font-weight: 100
 
-    &__img
-        margin-top: 12px
+    @include media-breakpoint-up(xl)
+        &__img
+            margin-top: 12px
 
     &__name
         color: $black
@@ -46,33 +47,32 @@
             display: block
             position: absolute
             left: 50%
-            @include media-breakpoint-down(sm)
+            @include media-breakpoint-down(lg)
                 transform: translateX(-50%)
-            @include media-breakpoint-up(md)
+            @include media-breakpoint-up(xl)
                 top: 50%
                 transform: translateY(-50%)
 
         &::before
-            @include media-breakpoint-down(sm)
+            @include media-breakpoint-down(lg)
                 border-bottom: 9px solid $primary
                 border-left: 11.5px solid transparent
                 border-right: 11.5px solid transparent
                 top: -9px
-            @include media-breakpoint-up(md)
+            @include media-breakpoint-up(xl)
                 border-right: 9px solid $primary
                 border-top: 11.5px solid transparent
                 border-bottom: 11.5px solid transparent
                 left: -9px
 
         &::after
-            @include media-breakpoint-down(sm)
+            @include media-breakpoint-down(lg)
                 border-bottom: 7px solid $white
                 border-left: 9.5px solid transparent
                 border-right: 9.5px solid transparent
                 top: -6px
-            @include media-breakpoint-up(md)
+            @include media-breakpoint-up(xl)
                 border-right: 7px solid $white
                 border-top: 9.5px solid transparent
                 border-bottom: 9.5px solid transparent
                 left: -6px
-

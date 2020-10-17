@@ -66,20 +66,6 @@
                         width: 17px
                         height: 17px
 
-            &__input
-                display: none
-
-                &:checked
-                    + #{$self}__label
-                        &::after
-                            top: 11px
-                            width: 11px
-                            height: 11px
-                            @include media-breakpoint-up(lg)
-                                top: 6px
-                                width: 9px
-                                height: 9px
-
                 &--danger
                     background-color: $red
 
@@ -89,6 +75,17 @@
                 &--success
                     background-color: $green
 
+            &__input
+                display: none
 
-
-
+                &:checked
+                    + #{$self}__label
+                        &::after
+                            left: -24px
+                            top: 11px
+                            width: 11px
+                            height: 11px
+                            @include media-breakpoint-up(lg)
+                                top: 6px
+                                width: 9px
+                                height: 9px
