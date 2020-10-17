@@ -1,0 +1,31 @@
+.video-block
+    &__popup-stub
+        position: relative
+
+        &::before
+            background-color: rgba($white, 0.38)
+            content: ""
+            border-radius: 50%
+            display: block
+            @include pos-center
+            transition: background-color 0.3s ease
+            height: 51px
+            width: 51px
+            z-index: 5
+
+        &::after
+            border-left: 13px solid $white
+            border-top: 13px solid transparent
+            border-bottom: 13px solid transparent
+            content: ""
+            @include pos-center
+            height: 0
+            width: 0
+            z-index: 6
+
+        &:hover
+            &::before
+                background-color: rgba($white, 0.45)
+                transition: background-color 0.3s ease
+
+
