@@ -1,8 +1,10 @@
 .result-block
     background-color: $white
     border-radius: 5px
-    padding: 20px 50px 25px
+    padding: 20px 20px 25px
     position: relative
+    @include media-breakpoint-up(lg)
+        padding: 20px 50px 25px
 
     &:not(:last-child)
         margin-bottom: 27px
@@ -11,13 +13,19 @@
         border-radius: 5px
         background-color: #6489e1
         color: #feffff
-        display: inline-flex
         font-size: 20px
         font-weight: 700
         line-height: 0.9
-        padding: 10px 45px
-        margin-left: -59px
-        margin-bottom: 20px
+        padding: 10px 30px
+        margin: 0 -30px 20px
+        text-align: center
+        @include media-breakpoint-up(md)
+            text-align: left
+        @include media-breakpoint-up(lg)
+            display: inline-flex
+            margin-left: -59px
+            margin-right: auto
+            padding: 10px 45px
 
         &--simple
             background-color: transparent
@@ -32,10 +40,19 @@
             text-align: center
 
     .bad-result-arrow-down-1
-        position: absolute
-        top: 27px
-        left: 50%
-        transform: translateX(22px)
+        display: block
+        margin-left: auto
+        margin-right: auto
+        margin-top: 10px
+        @include media-breakpoint-up(lg)
+            margin-left: 69%
+            margin-top: -10px
+        @include media-breakpoint-up(xl)
+            position: absolute
+            top: 27px
+            left: 50%
+            transform: translateX(22px)
+            margin-top: 0
 
     &__bottom-bordered
         border: 1px solid $primary
