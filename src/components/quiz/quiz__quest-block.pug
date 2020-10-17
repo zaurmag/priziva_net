@@ -1,33 +1,36 @@
-.row.no-gutters
-    .col-lg-auto
-        .pr-lg-60
-            .radio.radio--btn
-                input.radio__input#quiz1-1(type="radio" name="quiz1")
-                label.radio__label.radio__label--danger(for="quiz1-1") нет, это не про меня
+mixin quiz-quest-block(id, answers, descr)
+    .row.no-gutters.mt-xl-60.mt-30
+        .col-lg-auto
+            .pr-lg-60
+                - var i = 1;
+                each item in answers
+                    - var lblClass = '';
+                    if(item.type === 'danger')
+                        - lblClass = 'danger';
+                    else if(item.type === 'warning')
+                        - lblClass = 'warning'
+                    else if(item.type === 'success')
+                        - lblClass = 'success'
 
-            .radio.radio--btn
-                input.radio__input#quiz1-2(type="radio" name="quiz1")
-                label.radio__label.radio__label--warning(for="quiz1-2") иногда я так делаю
+                    .radio.radio--btn
+                        input.radio__input(id=`quiz-${id}-${i}` type="radio" name=`quiz-${id}`)
+                        label(class=`radio__label radio__label--${lblClass}` for=`quiz-${id}-${i}`)= item.title
+                    - i++;
 
-            .radio.radio--btn
-                input.radio__input#quiz1-3(type="radio" name="quiz1")
-                label.radio__label.radio__label--success(for="quiz1-3") да, это про меня
+        .col-lg.pl-lg-2.mt-30.mt-lg-0
+            .card
+                .card__header
+                    .card__title У тебя <span class="score-counter--js">0</span> баллов
+                    p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
 
+                .card__body
+                    p.card__small.mb-0 Пояснение к вопросу от сертифицированного тренера и лайф-коуча
 
-    .col-lg.pl-lg-2.mt-30.mt-lg-0
-        .card
-            .card__header
-                .card__title У тебя <span id="scoreCounter">0</span> баллов
-                p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
+                    .row.mt-xl-25.mt-15
+                        .col-xl-auto.text-center
+                            .card__img
+                                img.mb-15(src="./images/pavluk-d-s.png" alt="Павлюк Дмитрий Сергеевич")
+                            .card__name Павлюк <br />Дмитрий Сергеевич
 
-            .card__body
-                p.card__small.mb-0 Пояснение к вопросу от сертифицированного тренера и лайф-коуча
-
-                .row.mt-xl-25.mt-15
-                    .col-xl-auto.text-center
-                        .card__img
-                            img.mb-15(src="./images/pavluk-d-s.png" alt="Павлюк Дмитрий Сергеевич")
-                        .card__name Павлюк <br />Дмитрий Сергеевич
-
-                    .col-xl.mt-15.mt-xl-0
-                        .card__text Сам факт планирования уже помогает в поиске ресурсов на исполнение. Если у тебя проблемы с навыком планирования, то в конце теста ты получишь мини-техники, которые помогут быстро сделать планирование приятной привычкой.
+                        .col-xl.mt-15.mt-xl-0
+                            .card__text= descr
