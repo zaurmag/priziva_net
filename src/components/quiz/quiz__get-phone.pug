@@ -1,15 +1,15 @@
 // Radio buttons
-.row.justify-content-end.no-gutters
-    .col-md-auto.pr-30
-        h2.h4.quiz__get-phone-tlt Система приступила к анализу <br />результатов тестирования
+.row.justify-content-xl-end.justify-content-center.no-gutters
+    .col-auto.pr-xl-30
+        h2.h4.quiz__get-phone-tlt Система приступила к анализу <br class="d-none d-sm-inline" />результатов тестирования
 
-        .pl-35
+        .pl-xl-35.pl-sm-30
             h3.font-weight-normal Как вам удобнее <br />получить результат?
-            .radio.mb-10
+            .radio.mb-xl-10
                 input.radio__input#whatsApp(type="radio" name="getResult")
                 label.radio__label(for="whatsApp") Пришлите мне в <b>WhatsApp</b>
 
-            .radio
+            .radio.mb-xl-10
                 input.radio__input#telegram(type="radio" name="getResult")
                 label.radio__label(for="telegram") Пришлите мне в <b>Telegram</b>
 
@@ -18,7 +18,7 @@
                 label.radio__label(for="callMe") Перезвоните мне, у меня <br />остались вопросы
 
 
-    .col-md.quiz__present
+    .col-md.quiz__present.d-none.d-xl-block
         .present.mb-2
             .present__title Ваш подарок
             .present__body
@@ -33,13 +33,13 @@
 .quiz__get-phone-field
     img.quiz__get-phone-phone(src="./images/phone.png" alt="Как вам удобнее получить результат?")
 
-    .row.align-items-end.no-gutters
-        .col-md.pr-20
+    .row.align-items-xl-end.no-gutters
+        .col-xl.col-12.pr-xl-20
             .form__group
                 label.form__label(for="phone") Введите номер телефона <br /> и получите результаты тестирования
                 input.form__control.phone-mask--js#phone(type="tel" name="phone" placeholder="_ (___) ___-__-__" required)
 
-        .col-md
+        .col-xl.col-12.mt-15.mt-xl-0
             button.btn-submit--js.btn.btn-primary.btn-s67.btn-flare(type="submit") Получить результат
 
 //- Bottom
