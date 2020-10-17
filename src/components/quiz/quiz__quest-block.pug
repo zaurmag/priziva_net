@@ -13,7 +13,7 @@ mixin quiz-quest-block(id, answers, descr)
                         - lblClass = 'success'
 
                     .radio.radio--btn
-                        input.radio__input(id=`quiz-${id}-${i}` type="radio" name=`quiz-${id}`)
+                        input.radio__input.radio__input--js(id=`quiz-${id}-${i}` type="radio" name=`quiz-${id}`)
                         label(class=`radio__label radio__label--${lblClass}` for=`quiz-${id}-${i}`)= item.title
                     - i++;
 

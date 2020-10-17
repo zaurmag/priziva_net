@@ -12,7 +12,7 @@ block main
                 //- Header
                 include ./components/quiz/quiz__header
 
-                .progress.mt-30
+                #progress.progress.mt-30
                     include ./components/progress/progress
 
                 form#quizForm(novalidate)
@@ -21,7 +21,8 @@ block main
                         .quiz__quest-items
                             - var n = 1;
                             each item in questions
-                                .quiz__quest-block(id=`quizQuestBlock-${n}`)
+                                - var isActive = n === 1 ? ' is-active' : '';
+                                div(class=`quiz__quest-block quiz__quest-block--js${isActive}` id=`quizQuestBlock-${n}`)
                                     header.quiz__block-header
                                         .quiz__block-header-counter.mr-25= n
                                         h3.h4.quiz__title.my-0= item.title
@@ -34,9 +35,9 @@ block main
                             .container
                                 .row.justify-content-center.m-0.m-lg-n15
                                     .col-lg-auto.col-6.px-0.px-lg-15
-                                        button.btn-prev.btn.btn-secondary.btn-s48.px-sm-25(type="button") < Назад
+                                        button.btn-prev.btn.btn-secondary.btn-s48.px-sm-25.btn-prev--js(type="button") < Назад
                                     .col-lg-auto.col-6.px-0.px-lg-15
-                                        button.btn-next.btn.btn-secondary.btn-flare.btn-s48.px-sm-25.is-active(type="button") Cледующий шаг >
+                                        button.btn-next.btn.btn-secondary.btn-flare.btn-s48.px-sm-25.btn-next--js(type="button") Cледующий шаг >
 
                     //- ===================== Get phone block ======================================
                     .quiz__get-phone.mt-30.d-none
