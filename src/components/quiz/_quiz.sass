@@ -46,12 +46,20 @@
 
     // Buttons
     &__btns
+        .alert
+            max-width: 400px
+            margin-left: auto
+            margin-right: auto
+
         .btn
             text-shadow: 0 0 2.8px #2a5d5b
             border-radius: 24px
             color: $white
             font-size: 19px
             font-weight: 900
+
+            &.btn-prev
+                display: none
 
             &.btn-next
                 &:not(.is-active)

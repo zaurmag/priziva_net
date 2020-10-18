@@ -50,17 +50,19 @@ init();
 
 function init() {
 	quiz.progress();
-	console.log(chebx.length);
 
 	for (let i = 0; i < chebx.length; i++) {
 		// Прикрепляем событие для каждой отдельной кнопки
-		// При нажатии на кнопку будет вызываться функция Change()
 		let bindNext = quiz.next.bind(quiz);
-		chebx[i].addEventListener('change', (e) => {
-			setTimeout(bindNext, 1000);
+		chebx[i].addEventListener('change', (event) => {
+			// eslint-disable-next-line no-use-before-define
+			setTimeout(() => {
+				bindNext(event);
+			}, 1000);
 		});
 	}
 }
+
 
 /**
  * Фиксируем клики по кнопкам навигации
@@ -78,12 +80,13 @@ nextBtn[0].addEventListener('click', () => {
 	if (checks.length) {
 		quiz.next();
 	} else {
-		const quizFooter = document.querySelector('.quiz__footer');
+		const quizFooter = document.querySelector('.quiz__btns--js');
 		const alertDanger = document.createElement('div');
 
 		// console.log(alertDanger);
 		alertDanger.classList.add('alert');
 		alertDanger.classList.add('alert-danger');
+		alertDanger.classList.add('mb-15');
 		alertDanger.innerText = 'Вы должны выбрать один вариант ответа!';
 
 		quizFooter.prepend(alertDanger);

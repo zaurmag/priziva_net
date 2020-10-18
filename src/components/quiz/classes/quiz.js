@@ -19,14 +19,16 @@ export default class Quiz {
 		this.elements = elements;
 	}
 
-	change() {
-		// Добавляем очки
-		let value = this.questions[this.current - 1].change();
-		this.score += value;
+	change(event) {
+		if (event) {
+			// Добавляем очки
+			let value = this.questions[this.current - 1].change();
+			this.score += value;
 
-		this.elements.score.forEach((element) => {
-			element.innerText = this.score;
-		});
+			this.elements.score.forEach((element) => {
+				element.innerText = this.score;
+			});
+		}
 
 		if (this.current < this.questions.length) {
 			this.showBlock();
@@ -45,15 +47,16 @@ export default class Quiz {
 	}
 
 	// Переход к следующему вопросу
-	next() {
+	next(event) {
 		this.current++;
 
 		if (this.current >= this.questions.length) {
 			this.end();
 		}
 
-		this.change();
+		this.change(event);
 		this.elements.nextBtn.classList.add('is-active');
+		this.elements.nextBtn.classList.add('btn-flare');
 	}
 
 	// Переход к предыдущему вопросу
