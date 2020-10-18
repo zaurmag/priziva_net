@@ -85,6 +85,7 @@ const quiz = new Quiz(questions, results,
 		nextBtn: document.querySelector('.btn-next--js'),
 		score: document.querySelectorAll('.score-counter--js'),
 		percentCounter: document.getElementById('spinnerBlockCounter'),
+		whiteWrap: document.querySelector('.white-wrap--js'),
 	});
 
 const answers = new Answer();
@@ -130,7 +131,7 @@ nextBtn[0].addEventListener('click', () => {
 		alertDanger.classList.add('alert');
 		alertDanger.classList.add('alert-danger');
 		alertDanger.classList.add('mb-15');
-		alertDanger.innerText = 'Вы должны выбрать один вариант ответа!';
+		alertDanger.innerText = 'Пожалуйста, выберите вариант ответа!';
 
 		quizFooter.prepend(alertDanger);
 

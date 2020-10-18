@@ -78,10 +78,14 @@ export default class Quiz {
 		}
 		const getPhone = document.querySelector('.quiz__get-phone--js');
 		const btns = document.querySelector('.quiz__btns--js');
-		// result.innerHTML = this.results[this.result].text;
+		// Показываем блок захвата телефона
 		getPhone.style.display = 'block';
-		animationPercent(0, 100, this.elements.percentCounter);
-
+		// Анимируем проценты
+		animationPercent(0, 100, this.elements.percentCounter, () => {
+			// Показываем блок результата, но пока скрытым
+			this.elements.whiteWrap.classList.add('white-wrap--inactive');
+		});
+		// Скрываем кнопки навигации
 		btns.style.display = 'none';
 	}
 

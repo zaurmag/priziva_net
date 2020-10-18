@@ -13,25 +13,28 @@
         padding: 40px
         margin-top: -60px
 
-    &--no-active
-        animation: 2s animateTop ease infinite
-        opacity: 0.74
-        position: absolute
-        width: 100%
-        max-width: 895px
+        &--inactive
+            display: block !important
+            animation: 2s animateTop ease infinite
+            opacity: 0.74
+            position: absolute
+            width: 100%
+            max-width: 895px
 
-        .result__static,
-        .result__container,
-        .footer
-            display: none
+            .result__static,
+            .result__container,
+            .footer
+                display: none
 
+    &.result
+        display: none
 
 @keyframes animateTop
     0%
         transform: translateY(-20px)
 
     50%
-        transform: translateY(40px)
+        transform: translateY(30px)
 
     100%
         transform: translateY(-20px)

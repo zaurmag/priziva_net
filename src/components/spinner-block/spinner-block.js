@@ -2,7 +2,7 @@ const checkbox = document.querySelectorAll('.spinner-block__icon--js');
 const arrow = document.querySelectorAll('.spinner-block__arrow--js');
 const hideText = document.querySelectorAll('.quiz__get-phone-hide--js');
 
-export let animationPercent = (start, end, element) => {
+export let animationPercent = (start, end, element, callback) => {
 	element.parentNode.classList.add('animate');
 	let sickle = false;
 	let timeout = Math.round(3700 / end);
@@ -19,6 +19,8 @@ export let animationPercent = (start, end, element) => {
 				element.style.display = 'none';
 				// eslint-disable-next-line no-use-before-define
 				showElements();
+
+				callback();
 			}, 500);
 		}
 	}, timeout);
