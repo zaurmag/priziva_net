@@ -18,20 +18,63 @@ import Result from './classes/result';
 // Массив с результатами
 const results =
     [
-    	new Result('Вам многому нужно научиться', 0),
-    	new Result('Вы уже неплохо разбираетесь', 2),
-    	new Result('Ваш уровень выше среднего', 4),
-    	new Result('Вы в совершенстве знаете тему', 6),
+		new Result('Вам многому нужно научиться', 0),
+		new Result('Вы уже неплохо разбираетесь', 2),
+		new Result('Ваш уровень выше среднего', 4),
+		new Result('Вы в совершенстве знаете тему', 6),
     ];
 
 // Массив с вопросами
 const questions =
     [
-    	// eslint-disable-next-line no-mixed-spaces-and-tabs
-    	new Question('Сколько будет 2 * 2?', 10),
-		// eslint-disable-next-line no-mixed-spaces-and-tabs
-    	new Question('Сколько будет 2 + 2?', 40),
-    	new Question('Сколько будет 4 + 4?', 100),
+    	{
+    		id: 'quizQuestBlock-1',
+    		answers: [
+    			new Question('нет, это не про меня', 1),
+    			new Question('иногда я так делаю', 20),
+    			new Question('да, это про меня', 40),
+    		],
+    	},
+    	{
+    		id: 'quizQuestBlock-2',
+    		answers: [
+    			new Question('нет, это не про меня', 1),
+    			new Question('иногда я так делаю', 20),
+    			new Question('да, это про меня', 40),
+    		],
+    	},
+		{
+			id: 'quizQuestBlock-3',
+			answers: [
+				new Question('нет, это не про меня', 40),
+				new Question('иногда я так делаю', 20),
+				new Question('да, это про меня', 1),
+			],
+		},
+	    {
+		    id: 'quizQuestBlock-4',
+		    answers: [
+			    new Question('нет, это не про меня', 40),
+			    new Question('иногда бывает такое', 20),
+			    new Question('да, это про меня', 1),
+		    ],
+	    },
+	    {
+		    id: 'quizQuestBlock-5',
+		    answers: [
+			    new Question('нет, это не про меня', 1),
+			    new Question('иногда бывает такое', 20),
+			    new Question('да, это про меня', 40),
+		    ],
+	    },
+	    {
+		    id: 'quizQuestBlock-6',
+		    answers: [
+			    new Question('нет, это не про меня', 40),
+			    new Question('иногда бывает такое', 20),
+			    new Question('да, это про меня', 1),
+		    ],
+	    },
     ];
 
 // Сам тест
@@ -62,7 +105,6 @@ function init() {
 		});
 	}
 }
-
 
 /**
  * Фиксируем клики по кнопкам навигации

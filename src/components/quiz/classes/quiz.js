@@ -21,8 +21,10 @@ export default class Quiz {
 
 	change(event) {
 		if (event) {
+			const {index} = event.target.dataset;
+
 			// Добавляем очки
-			let value = this.questions[this.current - 1].change();
+			let value = this.questions[this.current - 1].answers[index - 1].change();
 			this.score += value;
 
 			this.elements.score.forEach((element) => {
