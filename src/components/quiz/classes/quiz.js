@@ -1,3 +1,5 @@
+import {animationPercent} from '../../spinner-block/spinner-block';
+
 export default class Quiz {
 	constructor(questions, results, elements) {
 		// Массив с вопросами
@@ -70,13 +72,15 @@ export default class Quiz {
 	// Если вопросы кончились, этот метод проверит, какой результат получил пользователь
 	end() {
 		for (let i = 0; i < this.results.length; i++) {
-			if (this.results[i].Check(this.score)) {
+			if (this.results[i].check(this.score)) {
 				this.result = i;
 			}
 		}
-		const result = document.querySelector('.quiz__result--js');
-		const btns = document.querySelector('.quiz__buttons');
-		result.innerHTML = this.results[this.result].text;
+		const getPhone = document.querySelector('.quiz__get-phone--js');
+		const btns = document.querySelector('.quiz__btns--js');
+		// result.innerHTML = this.results[this.result].text;
+		getPhone.style.display = 'block';
+		animationPercent(0, 100, this.elements.percentCounter);
 
 		btns.style.display = 'none';
 	}
@@ -107,7 +111,7 @@ export default class Quiz {
 		for (let i = 1; i <= this.questions.length; i++) {
 			let step = document.createElement('div');
 			step.className = 'progress__step';
-			step.innerHTML = `Вопрос ${i} из ${this.questions.length}`;
+			step.innerHTML = `<span>Вопрос ${i} из ${this.questions.length}</span>`;
 
 			if (i === this.current + 1) {
 				step.classList.add('is-active');

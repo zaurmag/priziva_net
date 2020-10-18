@@ -84,6 +84,7 @@ const quiz = new Quiz(questions, results,
 		questBlock: document.querySelectorAll('.quiz__quest-block--js'),
 		nextBtn: document.querySelector('.btn-next--js'),
 		score: document.querySelectorAll('.score-counter--js'),
+		percentCounter: document.getElementById('spinnerBlockCounter'),
 	});
 
 const answers = new Answer();

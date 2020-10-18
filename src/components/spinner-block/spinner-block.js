@@ -1,9 +1,8 @@
-let counter = document.getElementById('spinnerBlockCounter');
 const checkbox = document.querySelectorAll('.spinner-block__icon--js');
 const arrow = document.querySelectorAll('.spinner-block__arrow--js');
 const hideText = document.querySelectorAll('.quiz__get-phone-hide--js');
 
-let animationPersent = (start, end, element) => {
+export let animationPercent = (start, end, element) => {
 	element.parentNode.classList.add('animate');
 	let sickle = false;
 	let timeout = Math.round(3700 / end);
@@ -30,8 +29,3 @@ function showElements() {
 	arrow[0].style.display = 'block';
 	hideText[0].style.opacity = 1;
 }
-
-// Call function animate
-window.onload = () => {
-	animationPersent(0, 100, counter);
-};
