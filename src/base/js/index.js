@@ -8,3 +8,6 @@ import '../../components/spinner-block/spinner-block';
 
 // Quiz Js
 import '../../components/quiz/quiz';
+
+// Form
+import '../../components/form/form';

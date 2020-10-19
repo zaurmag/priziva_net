@@ -12,7 +12,7 @@ import './inputmask-bundle/init';
 // import './magnific-popup/init';
 
 // Simple ajax form
-// import './simple-ajax-form-submit/jquery.simple-ajax-form';
+import './simple-ajax-form-submit/jquery.simple-ajax-form';
 
 // Enquire Js
 // import './enquire.min';
