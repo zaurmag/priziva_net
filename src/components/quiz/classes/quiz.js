@@ -45,8 +45,12 @@ export default class Quiz {
 		const prevBtn = document.querySelector('.btn-prev--js');
 		if (this.current >= 1) {
 			prevBtn.style.display = 'inline';
+			prevBtn.parentNode.nextElementSibling.classList.remove('col-12');
+			prevBtn.parentNode.nextElementSibling.classList.add('col-6');
 		} else {
 			prevBtn.style.display = 'none';
+			prevBtn.parentNode.nextElementSibling.classList.add('col-12');
+			prevBtn.parentNode.nextElementSibling.classList.remove('col-6');
 		}
 	}
 
@@ -115,14 +119,18 @@ export default class Quiz {
 		for (let i = 1; i <= this.questions.length; i++) {
 			let step = document.createElement('div');
 			step.className = 'progress__step';
-			step.innerHTML = `<span>Вопрос ${i} из ${this.questions.length}</span>`;
 
 			if (i === this.current + 1) {
 				step.classList.add('is-active');
+				step.innerHTML = `<span>Вопрос ${i} из ${this.questions.length}</span>`;
 			}
 
 			if (allActive) {
 				step.classList.add('is-active');
+
+				if (i === this.questions.length) {
+					step.innerHTML = `<span>Вопрос ${i} из ${this.questions.length}</span>`;
+				}
 			}
 
 			this.elements.progress.appendChild(step);

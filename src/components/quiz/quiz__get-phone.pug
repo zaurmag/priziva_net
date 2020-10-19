@@ -14,7 +14,7 @@
                 label.radio__label(for="telegram") Пришлите мне в <b>Telegram</b>
 
             .radio
-                input.radio__input#callMe(type="radio" name="getResult")
+                input.radio__input#callMe(type="radio" name="getResult" checked)
                 label.radio__label(for="callMe") Перезвоните мне, у меня <br />остались вопросы
 
 
@@ -30,7 +30,7 @@
         img.quiz__present-arrdown(src="./images/quiz-get-phone-down.png" alt="")
 
 //- Phone field
-.quiz__get-phone-field
+.quiz__get-phone-field.quiz__get-phone-field--js
     img.quiz__get-phone-phone(src="./images/phone.png" alt="Как вам удобнее получить результат?")
 
     .row.align-items-xl-end.no-gutters
@@ -51,4 +51,4 @@
     .quiz__get-phone-hide.quiz__get-phone-hide--js.text-center
         p.mb-0 Результат тестирования и набор мини-техник для тебя сформирован.
         p.mb-0
-            strong Он откроется сразу, после регистрации
+            strong Он откроется сразу после регистрации

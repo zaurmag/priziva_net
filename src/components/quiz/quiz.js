@@ -30,7 +30,7 @@ const questions =
     	{
     		id: 'quizQuestBlock-1',
     		answers: [
-    			new Question('нет, это не про меня', 1),
+    			new Question('нет, это не про меня', 10),
     			new Question('иногда я так делаю', 20),
     			new Question('да, это про меня', 40),
     		],
@@ -38,7 +38,7 @@ const questions =
     	{
     		id: 'quizQuestBlock-2',
     		answers: [
-    			new Question('нет, это не про меня', 1),
+    			new Question('нет, это не про меня', 10),
     			new Question('иногда я так делаю', 20),
     			new Question('да, это про меня', 40),
     		],
@@ -48,7 +48,7 @@ const questions =
 			answers: [
 				new Question('нет, это не про меня', 40),
 				new Question('иногда я так делаю', 20),
-				new Question('да, это про меня', 1),
+				new Question('да, это про меня', 10),
 			],
 		},
 	    {
@@ -56,13 +56,13 @@ const questions =
 		    answers: [
 			    new Question('нет, это не про меня', 40),
 			    new Question('иногда бывает такое', 20),
-			    new Question('да, это про меня', 1),
+			    new Question('да, это про меня', 10),
 		    ],
 	    },
 	    {
 		    id: 'quizQuestBlock-5',
 		    answers: [
-			    new Question('нет, это не про меня', 1),
+			    new Question('нет, это не про меня', 10),
 			    new Question('иногда бывает такое', 20),
 			    new Question('да, это про меня', 40),
 		    ],
@@ -72,7 +72,7 @@ const questions =
 		    answers: [
 			    new Question('нет, это не про меня', 40),
 			    new Question('иногда бывает такое', 20),
-			    new Question('да, это про меня', 1),
+			    new Question('да, это про меня', 10),
 		    ],
 	    },
     ];

@@ -6,8 +6,8 @@ append variables
     - var title = 'Интерактивный тест, основанный на научных знаниях о мозге, когнитивистике и нейрофизиологии'
 
 block main
-    main#main
-        .white-wrap
+    main#main.content
+        .white-wrap.mt-xl-n60
             .quiz.form.px-sm-20
                 //- Header
                 include ./components/quiz/quiz__header
@@ -33,10 +33,10 @@ block main
                         //- Question buttons navigation
                         .quiz__btns.quiz__btns--js.text-center.mt-50
                             .container
-                                .row.justify-content-center
+                                .row.justify-content-center.mx-0
                                     .col-lg-auto.col-6.px-0.px-lg-15
                                         button.btn-prev.btn.btn-secondary.btn-s48.px-sm-25.btn-prev--js(type="button") < Назад
-                                    .col-lg-auto.col-6.px-0.px-lg-15
+                                    .col-lg-auto.col-12.px-0.px-lg-15
                                         button.btn-next.btn.btn-secondary.btn-s48.px-sm-25.btn-next--js(type="button") Cледующий шаг >
 
                     //- ===================== Get phone block ======================================
@@ -47,7 +47,7 @@ block main
             include ./components/footer/footer
 
         //- ================ Result block - BAD ================================
-        .result.white-wrap.white-wrap--js.mt-20
+        .result.white-wrap.white-wrap--js
             .px-xl-20
                 .row.justify-content-center.no-gutters
                     .col-lg-10
@@ -76,7 +76,7 @@ block main
             include ./components/footer/footer
 
         //- ============ Result block - GOOD ======================================
-        .white-wrap.mt-20.d-none
+        .white-wrap.d-none
             .result.px-xl-20
                 .row.justify-content-center.no-gutters
                     .col-md-10

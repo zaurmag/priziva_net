@@ -11,30 +11,33 @@
         padding: 35px
     @include media-breakpoint-up(xl)
         padding: 40px
-        margin-top: -60px
+        // margin-top: -60px
 
-        &--inactive
-            display: block !important
-            animation: 2s animateTop ease infinite
-            opacity: 0.74
-            position: absolute
-            width: 100%
-            max-width: 895px
+    &--inactive
+        display: block !important
+        animation: 2s animateTop ease infinite
+        opacity: 0.74
+        position: absolute
+        top: calc(100% - 150px)
+        width: 100%
+        max-width: 895px
+        @include media-breakpoint-up(lg)
+            top: calc(100% - 181px)
 
-            .result__static,
-            .result__container,
-            .footer
-                display: none
+        .result__static,
+        .result__container,
+        .footer
+            display: none
 
     &.result
         display: none
 
 @keyframes animateTop
     0%
-        transform: translateY(-20px)
+        top: calc(100% - 181px)
 
     50%
-        transform: translateY(30px)
+        top: calc(100% - 140px)
 
     100%
-        transform: translateY(-20px)
+        top: calc(100% - 181px)
