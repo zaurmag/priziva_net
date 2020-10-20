@@ -14,6 +14,9 @@ jQuery(document).ready(($) => {
 			$btnSubmit.removeClass('btn-primary btn-flare').addClass('btn-secondary');
 		} else {
 			$btnSubmit.removeClass('btn-secondary').addClass('btn-primary btn-flare');
+			quiz.append();
+
+			//console.log(quiz);
 		}
 	});
 });
