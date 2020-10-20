@@ -76,13 +76,10 @@
 							}
 							$this.removeClass('was-validated');
 							callback();
-							// $this.find('.form__group').removeClass('is-focused');
-							// $this.find('.form__hide-success').slideUp().delay(5000).slideDown();
 							btn.removeClass(btnClass);
-							// $this.find('.form__hide-success').after('<div class="form__sys-message alert alert-success text-center mb-0"></div>');
-							// $this.find('.form__sys-message').html(`<h4 class="form__success-title alert-heading mb-2">${options.successTitle}</h4><p class = "form__success-text" >${options.successText}</p>`);
+							btn.removeClass('btn-primary btn-flare').addClass('btn-secondary');
+
 							setTimeout(() => {
-								// $this.find('.form__sys-message').fadeOut().delay(3000).remove();
 								if (options.autoClose) {
 									$.magnificPopup.close();
 								}

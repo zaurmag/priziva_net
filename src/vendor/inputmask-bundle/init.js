@@ -7,13 +7,11 @@ jQuery(document).ready(($) => {
 		// showMaskOnHover: false
 	});
 
-	$phoneMask.on('change', () => {
+	$phoneMask.on('keyup', () => {
 		if ($phoneMask.val().indexOf('_') !== -1 || $phoneMask.val() === '') {
-			$btnSubmit.removeClass('btn-primary btn-flare');
-			$btnSubmit.addClass('btn-secondary');
+			$btnSubmit.removeClass('btn-primary btn-flare').addClass('btn-secondary');
 		} else {
-			$btnSubmit.removeClass('btn-secondary');
-			$btnSubmit.addClass('btn-primary btn-flare');
+			$btnSubmit.removeClass('btn-secondary').addClass('btn-primary btn-flare');
 		}
 	});
 });
