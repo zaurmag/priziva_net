@@ -8,7 +8,7 @@ jQuery(document).ready(($) => {
 		errorMessPlace: '.quiz__get-phone-field--js',
 		debug: false,
 	}, () => {
-		$whiteWrap.removeClass('white-wrap--inactive').addClass('white-wrap--active');
+		$whiteWrap.removeClass('white-wrap--inactive').parent().removeClass('is-inactive');
 
 		$('html, body').animate({
 			scrollTop: `${$result.offset().top}px`,

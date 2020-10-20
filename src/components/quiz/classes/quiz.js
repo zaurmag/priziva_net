@@ -25,11 +25,11 @@ export default class Quiz {
 		if (event) {
 			const {index} = event.target.dataset;
 
-			let result = [];
-			let resultVal = this.results[this.current - 1].answers[index - 1].check();
-			result.push(this.results[this.current - 1].answers[index - 1]);
+			// let result = [];
+			// let resultVal = this.results[this.current - 1].answers[index - 1].check();
+			// result.push(this.results[this.current - 1].answers[index - 1]);
 
-			console.log(resultVal);
+			// console.log(resultVal);
 
 			// Добавляем очки
 			let value = this.questions[this.current - 1].answers[index - 1].change();
@@ -81,11 +81,11 @@ export default class Quiz {
 
 	// Если вопросы кончились, этот метод проверит, какой результат получил пользователь
 	end() {
-		for (let i = 0; i < this.results.length; i++) {
-			if (this.results[i].check(this.score)) {
-				this.result = i;
-			}
-		}
+		// for (let i = 0; i < this.results.length; i++) {
+		// 	if (this.results[i].check(this.score)) {
+		// 		this.result = i;
+		// 	}
+		// }
 		const getPhone = document.querySelector('.quiz__get-phone--js');
 		const btns = document.querySelector('.quiz__btns--js');
 		// Показываем блок захвата телефона
@@ -93,6 +93,7 @@ export default class Quiz {
 		// Анимируем проценты
 		animationPercent(0, 100, this.elements.percentCounter, () => {
 			// Показываем блок результата, но пока скрытым
+			this.elements.whiteWrap.parentNode.classList.remove('d-none');
 			this.elements.whiteWrap.classList.add('white-wrap--inactive');
 		});
 		// Скрываем кнопки навигации

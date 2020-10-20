@@ -47,33 +47,35 @@ block main
             include ./components/footer/footer
 
         //- ================ Result block - BAD ================================
-        #result.result.white-wrap.white-wrap--js
-            .px-xl-20
-                .row.justify-content-center.no-gutters
-                    .col-lg-10
-                        header.result__header
-                            i.icon.unlock
-                            h2.m-0.result__title Результат тестирования и мини-техники для тебя
 
-                //- Staic text
-                .result__static.mt-xl-50.mt-30
-                    include ./components/result/result__static
+        #result.result.is-inactive.d-none
+            .white-wrap.white-wrap--js
+                .px-xl-20
+                    .row.justify-content-center.no-gutters
+                        .col-lg-10
+                            header.result__header
+                                i.icon.unlock
+                                h2.m-0.result__title Результат тестирования и мини-техники для тебя
 
-                .result__container.mt-xl-50.mt-15
-                    h2.h4.result__container-tlt.mb-30 Результаты самодиагностики по 5 векторам <br class="d-none d-xl-inline" />достижения целей и успеха
+                    //- Staic text
+                    .result__static.mt-xl-50.mt-30
+                        include ./components/result/result__static
 
-                    //- Blocks
-                    .result__container-blocks
-                        //- Block #1
-                        .result-block
-                            include ./components/result/bad/result-block__1
+                    .result__container.mt-xl-50.mt-15
+                        h2.h4.result__container-tlt.mb-30 Результаты самодиагностики по 5 векторам <br class="d-none d-xl-inline" />достижения целей и успеха
 
-                        //- Block #2
-                        .result-block.px-30
-                            include ./components/result/bad/result-block__2
+                        //- Blocks
+                        .result__container-blocks
+                            //- Block #1
+                            .result-block
+                                include ./components/result/bad/result-block__1
 
-            //- Block footer
-            include ./components/footer/footer
+                            //- Block #2
+                            .result-block.px-30
+                                include ./components/result/bad/result-block__2
+
+                //- Block footer
+                include ./components/footer/footer
 
         //- ============ Result block - GOOD ======================================
         .white-wrap.d-none

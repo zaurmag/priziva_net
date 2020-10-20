@@ -18,36 +18,24 @@
         animation: 2s animateTop ease infinite
         opacity: 0.74
         position: absolute
-        top: calc(100% - 150px)
+        top: calc(100% - 60px)
         width: 100%
         max-width: 895px
         margin-top: 0
         @include media-breakpoint-up(lg)
-            top: calc(100% - 181px)
+            top: calc(100% - 150px)
 
         .result__static,
         .result__container,
         .footer
             display: none
 
-    &--active
-        display: block !important
-
-        .result__static,
-        .result__container,
-        .footer
-            display: block
-
-    &.result
-        display: none
-        margin-top: 30px
-
 @keyframes animateTop
     0%
-        top: calc(100% - 181px)
+        top: calc(100% - 80px)
 
     50%
-        top: calc(100% - 140px)
+        top: calc(100% - 130px)
 
     100%
-        top: calc(100% - 181px)
+        top: calc(100% - 80px)
