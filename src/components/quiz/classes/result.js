@@ -1,15 +1,14 @@
 export default class Result {
-	constructor(text, value) {
+	constructor(title, img, text, footer, value) {
+		this.title = title;
+		this.img = img;
 		this.text = text;
+		this.footer = footer;
 		this.value = value;
 	}
 
-	// Этот метод проверяет, достаточно ли очков набрал пользователь
-	check(value) {
-		if (this.value <= value) {
-			return true;
-		}
-
-        return false;
+	// Этот метод проверяет на какой вопрос мы кликнули - положительный или отрицательный
+	check() {
+		return this.value > 0;
 	}
 }
