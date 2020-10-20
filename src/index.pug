@@ -46,7 +46,7 @@ block main
             //- Block footer
             include ./components/footer/footer
 
-        //- ================ Result block - BAD ================================
+        //- ================ Result block ================================
 
         #result.result.is-inactive.d-none
             .white-wrap.white-wrap--js
@@ -66,11 +66,7 @@ block main
 
                         //- Blocks
                         .result__container-blocks
-                            //- Block #1
-                            .result-block
-                                include ./components/result/bad/result-block__1
-
-                            //- Block #2
+                            #resultContainerBlocks
                             .result-block.px-30
                                 include ./components/result/bad/result-block__2
 

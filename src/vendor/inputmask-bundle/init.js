@@ -1,3 +1,5 @@
+import {quiz} from '../../components/quiz/quiz';
+
 jQuery(document).ready(($) => {
 	const $phoneMask = $('.phone-mask--js');
 	const $btnSubmit = $('.btn-submit--js');
