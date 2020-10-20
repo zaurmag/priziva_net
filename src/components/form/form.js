@@ -6,7 +6,7 @@ jQuery(document).ready(($) => {
 		successTitle: '',
 		successText: '',
 		errorMessPlace: '.quiz__get-phone-field--js',
-		debug: true,
+		debug: false,
 	}, () => {
 		$whiteWrap.removeClass('white-wrap--inactive').addClass('white-wrap--active');
 
