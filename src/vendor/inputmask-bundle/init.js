@@ -1,3 +1,5 @@
+import {quiz} from '../../components/quiz/quiz';
+
 jQuery(document).ready(($) => {
 	const $phoneMask = $('.phone-mask--js');
 	const $btnSubmit = $('.btn-submit--js');
@@ -12,6 +14,9 @@ jQuery(document).ready(($) => {
 			$btnSubmit.removeClass('btn-primary btn-flare').addClass('btn-secondary');
 		} else {
 			$btnSubmit.removeClass('btn-secondary').addClass('btn-primary btn-flare');
+			quiz.append();
+
+			//console.log(quiz);
 		}
 	});
 });

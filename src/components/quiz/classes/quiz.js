@@ -21,28 +21,37 @@ export default class Quiz {
 		this.elements = elements;
 	}
 
-	change(event) {
-		if (event) {
-			const {index} = event.target.dataset;
-
-			// let result = [];
-			// let resultVal = this.results[this.current - 1].answers[index - 1].check();
-			// result.push(this.results[this.current - 1].answers[index - 1]);
-
-			// console.log(resultVal);
-
-			// Добавляем очки
-			let value = this.questions[this.current - 1].answers[index - 1].change();
-			this.score += value;
-
-			this.elements.score.forEach((element) => {
-				element.innerText = this.score;
-			});
+	render(elements, val) {
+		const el = elements;
+		if (el) {
+			return el;
 		}
+	}
 
+	change(event) {
 		if (this.current < this.questions.length) {
+
 			this.showBlock();
 			this.progress();
+			if (event) {
+				const {index} = event.target.dataset;
+
+				// let result = [];
+				// let resultVal = this.results[this.current - 1].answers[index - 1].check();
+				// result.push(this.results[this.current - 1].answers[index - 1]);
+				//
+				// result.forEach((el) => {
+				// 	this.render(el, resultVal);
+				// });
+
+				// Добавляем очки
+				let value = this.questions[this.current - 1].answers[index - 1].change();
+				this.score += value;
+
+				this.elements.score.forEach((element) => {
+					element.innerText = this.score;
+				});
+			}
 		} else {
 			this.hideBlock();
 			this.progress(true);
@@ -81,11 +90,6 @@ export default class Quiz {
 
 	// Если вопросы кончились, этот метод проверит, какой результат получил пользователь
 	end() {
-		// for (let i = 0; i < this.results.length; i++) {
-		// 	if (this.results[i].check(this.score)) {
-		// 		this.result = i;
-		// 	}
-		// }
 		const getPhone = document.querySelector('.quiz__get-phone--js');
 		const btns = document.querySelector('.quiz__btns--js');
 		// Показываем блок захвата телефона
