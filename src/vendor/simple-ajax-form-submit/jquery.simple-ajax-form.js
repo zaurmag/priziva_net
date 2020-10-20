@@ -39,7 +39,7 @@
 
 			$(this).submit(function (event) {
 				let data = $(this).serialize();
-				let btnClass = 'progress-bar-animated progress-bar-striped bg-primary text-white';
+				let btnClass = 'is-sending';
 
 				if ($this[0].checkValidity() === false) {
 					$this.addClass('was-validated');
@@ -68,7 +68,8 @@
 						btn.addClass(btnClass);
 					},
 					success(result) {
-						if (result === 1) {
+						// eslint-disable-next-line eqeqeq
+						if (result == 1) {
 							$this[0].reset();
 							if (options.captcha) {
 								grecaptcha.reset();
@@ -86,9 +87,9 @@
 									$.magnificPopup.close();
 								}
 							}, options.autoCloseDelay);
-						} else if (result === 2) {
+						} else if (result == 2) {
 							errorRes(options.errorNocaptcha);
-						} else if (result === 3) {
+						} else if (result == 3) {
 							errorRes(options.errorCaptcha);
 						} else {
 							errorRes(options.errorSubmit);

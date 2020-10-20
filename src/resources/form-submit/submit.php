@@ -30,18 +30,28 @@ $formGo = $formData["go"]; ?>
     $message  = '<html><body>';
     $message .= "<table>";
     $title = array(
-        "name" => "Имя:",
         "phone" => "Телефон:",
-        "email" => "E-mail:",
+        "getResult" => "Как вам удобнее получить результат:",
     );
 
     foreach($formData as $key => $value) {
-        if ($key != 'go') {
+        if (is_array($value)) {
+            foreach ($value as $k => $val) {
+                $message .= "<tr>";
+                $message .= "<td style='width: 350px;padding-top: 15px'>";
+                $message .= "<strong>". $value[0]. "</strong>";
+                $message .= "</td>";
+                $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+                $message .= "$value[answers]";
+                $message .= "</td>";
+                $message .= "</tr>";
+            }
+        } else {
             $message .= "<tr>";
-            $message .= "<td>";
+            $message .= "<td style='padding-top: 20px'>";
             $message .= "<strong>" . $title[$key] . "</strong>";
             $message .= "</td>";
-            $message .= "<td style='padding-left:12px;'>";
+            $message .= "<td style='padding-left:12px;padding-top: 20px'>";
             $message .= "$value";
             $message .= "</td>";
             $message .= "</tr>";
@@ -90,9 +100,9 @@ $formGo = $formData["go"]; ?>
         }
     } else {
         if (mail($to, adopt($subject), $message, $headers)) {
-                $answer = '1';
-            } else {
-                $answer = '0';
+            $answer = '1';
+        } else {
+            $answer = '0';
         }
     }
 

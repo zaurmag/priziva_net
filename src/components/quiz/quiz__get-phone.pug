@@ -6,15 +6,15 @@
         .pl-xl-35.pl-sm-30
             h3.font-weight-normal Как вам удобнее <br />получить результат?
             .radio.mb-xl-10
-                input.radio__input#whatsApp(type="radio" name="getResult")
+                input.radio__input#whatsApp(type="radio" name="getResult" value="WhatsApp")
                 label.radio__label(for="whatsApp") Пришлите мне в <b>WhatsApp</b>
 
             .radio.mb-xl-10
-                input.radio__input#telegram(type="radio" name="getResult")
+                input.radio__input#telegram(type="radio" name="getResult" value="Телеграм")
                 label.radio__label(for="telegram") Пришлите мне в <b>Telegram</b>
 
             .radio
-                input.radio__input#callMe(type="radio" name="getResult" checked)
+                input.radio__input#callMe(type="radio" name="getResult" value="Перезвоните мне" checked)
                 label.radio__label(for="callMe") Перезвоните мне, у меня <br />остались вопросы
 
 
@@ -40,7 +40,7 @@
                 input.form__control.phone-mask--js#phone(type="tel" name="phone" placeholder="_ (___) ___-__-__" required)
 
         .col-xl.col-12.mt-15.mt-xl-0
-            button.btn-submit--js.btn.btn-primary.btn-s67.btn-flare(type="submit") Получить результат
+            button.btn-submit.btn-submit--js.btn.btn-secondary.btn-s67(type="submit") Получить результат
 
 //- Bottom
 .quiz__get-phone-bottom.mt-30

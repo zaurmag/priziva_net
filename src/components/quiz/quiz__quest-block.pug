@@ -1,7 +1,9 @@
-mixin quiz-quest-block(id, answers, descr)
+mixin quiz-quest-block(id, answers, descr, title)
     .row.no-gutters.mt-xl-60.mt-30
         .col-lg-auto
             .pr-lg-60
+                input(type="hidden" name=`quiz-${id}[]` value= title)
+
                 - var i = 1;
                 each item in answers
                     - var lblClass = '';
@@ -13,7 +15,7 @@ mixin quiz-quest-block(id, answers, descr)
                         - lblClass = 'success'
 
                     .radio.radio--btn
-                        input.radio__input.radio__input--js(id=`quiz-${id}-${i}` type="radio" name=`quiz-${id}` data-index= i)
+                        input.radio__input.radio__input--js(id=`quiz-${id}-${i}` type="radio" name=`quiz-${id}[answers]` value= item.title data-index= i)
                         label(class=`radio__label radio__label--${lblClass}` for=`quiz-${id}-${i}`)= item.title
                     - i++;
 

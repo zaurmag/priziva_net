@@ -27,7 +27,7 @@ block main
                                         .quiz__block-header-counter.mr-25= n
                                         h3.h4.quiz__title.my-0= item.title
 
-                                    +quiz-quest-block(n, item.answers, item.description)
+                                    +quiz-quest-block(n, item.answers, item.description, item.title)
                                 - n++;
 
                         //- Question buttons navigation
@@ -47,7 +47,7 @@ block main
             include ./components/footer/footer
 
         //- ================ Result block - BAD ================================
-        .result.white-wrap.white-wrap--js
+        #result.result.white-wrap.white-wrap--js
             .px-xl-20
                 .row.justify-content-center.no-gutters
                     .col-lg-10
