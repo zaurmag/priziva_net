@@ -153,9 +153,9 @@ let toHTMLBad = (results) => {
 			</h3>
 			<div class="row align-items-center">
 				<div class="col-xl-auto text-center">
-				<a class="video-block video-block__popup-stub" href="#">
+				<a class="video-block video-block__popup-stub popup-video--js" href="https://www.youtube.com/watch?v=jLvLZG0JEmk">
 					<img class="img-fluid" src="./images/result-block/bad/video-stub.jpg" alt="Скорее смотри это видео и выполняй задания.">
-					</a>
+				</a>
 				</div>
 				<div class="col-xl-1 textblock text-center mt-15 mt-xl-0">
 					<p class="m-0">или</p>
@@ -216,12 +216,22 @@ function render(id, index) {
 
 					if (badGood) {
 						let html = newArr.map(toHTMLGood).join('');
-						console.log(id);
+						// console.log(id);
 						resultBlock.insertAdjacentHTML('beforebegin', html);
 					} else {
 						let html = newArr.map(toHTMLBad).join('');
-						console.log(id);
+						// console.log(id);
 						resultBlock.insertAdjacentHTML('beforebegin', html);
+
+						setTimeout(() => {
+							$('.popup-video--js').magnificPopup({
+								type: 'iframe',
+								mainClass: 'mfp-scale',
+								removalDelay: 160,
+								preloader: true,
+								fixedContentPos: false,
+							});
+						}, 100);
 					}
 					// console.log(html);
 				}
