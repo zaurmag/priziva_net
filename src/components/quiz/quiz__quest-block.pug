@@ -23,7 +23,10 @@ mixin quiz-quest-block(id, answers, descr, title)
             .card
                 .card__header
                     .card__title У тебя <span class="score-counter--js">0</span> баллов
-                    p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
+                    if n <= 1
+                        p.fz-14.mb-0.mt-1 Начни отвечать на вопросы
+                    else
+                        p.fz-14.mb-0.mt-1 Продолжай отвечать на вопросы
 
                 .card__body
                     p.card__small.mb-0 Пояснение к вопросу от сертифицированного тренера и лайф-коуча

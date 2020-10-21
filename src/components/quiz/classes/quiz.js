@@ -30,7 +30,6 @@ export default class Quiz {
 
 	change(event) {
 		if (this.current < this.questions.length) {
-
 			this.showBlock();
 			this.progress();
 			if (event) {

@@ -1,5 +1,6 @@
 export default class Result {
-	constructor(index, title, img, text, footer, value) {
+	constructor(id, index, title, img, text, footer, value) {
+		this.id = id;
 		this.index = index;
 		this.title = title;
 		this.img = img;
