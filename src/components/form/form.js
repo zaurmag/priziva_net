@@ -10,7 +10,7 @@ export let sendForm = $('#quizForm')
 	}, () => {
 		$whiteWrap.removeClass('white-wrap--inactive')
 			.parent()
-			.removeClass('is-inactive');
+			.removeClass('is-inactive').addClass('mt-30');
 
 		$('html, body')
 			.animate({
