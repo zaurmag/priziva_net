@@ -9,7 +9,7 @@ import './inputmask-bundle/init';
 // import './jquery-formstyler/init';
 
 // Magnific Popup
-// import './magnific-popup/init';
+import './magnific-popup/init';
 
 // Simple ajax form
 import './simple-ajax-form-submit/jquery.simple-ajax-form';
