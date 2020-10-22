@@ -1,6 +1,7 @@
 import {animateScroll} from '../../vendor/animate-scroll';
 
 const $whiteWrap = $('.white-wrap--js');
+const $whiteWrapSuccess = $('.whie-wrap__hide-success--js');
 const $result = $('#result');
 
 export let sendForm = $('#quizForm')
@@ -13,5 +14,6 @@ export let sendForm = $('#quizForm')
 		$whiteWrap.removeClass('white-wrap--inactive')
 			.parent()
 			.removeClass('is-inactive').addClass('mt-30');
+		$whiteWrapSuccess.hide();
 		animateScroll($result, 500);
 	});

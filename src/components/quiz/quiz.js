@@ -241,7 +241,7 @@ function render(id, index) {
 					// if (results[i].id === id) {
 					// 	console.log(' 343434343 ');
 					// }
-					console.log(newArr);
+					// console.log(newArr);
 
 					if (ifGood) {
 						insertHTML(toHTMLGood);
