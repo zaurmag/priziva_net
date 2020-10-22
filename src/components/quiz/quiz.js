@@ -1,7 +1,11 @@
+// Enquire Js
+import enquire from 'enquire.js';
+
 // Vars
 const prevBtn = document.getElementsByClassName('btn-prev--js');
 const nextBtn = document.getElementsByClassName('btn-next--js');
 const chebx = document.getElementsByClassName('radio__input--js');
+const main = document.getElementById('main');
 
 // Класс, который представляет сам тест
 import Quiz from './classes/quiz';
@@ -281,8 +285,29 @@ function init() {
 }
 
 /**
+ * Показываем кнопки навигации, если мы в блоке вопроса
+ */
+const quizBtns = document.querySelector('.quiz__btns--js');
+enquire.register('screen and (max-width: 992px)', {
+	match() {
+		window.addEventListener('scroll', () => {
+			let mainY = main.getBoundingClientRect().y;
+			if (mainY <= 0) {
+				quizBtns.style.display = 'block';
+			} else {
+				quizBtns.style.display = 'none';
+			}
+		});
+	},
+	unmatch() {
+		quizBtns.style.display = 'block';
+	},
+});
+
+/**
  * Фиксируем клики по кнопкам навигации
  */
+
 // Предыдущий вопрос
 prevBtn[0].addEventListener('click', () => {
 	quiz.prev();

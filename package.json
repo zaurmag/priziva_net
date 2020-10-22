@@ -58,6 +58,7 @@
   },
   "dependencies": {
     "bootstrap": "latest",
+    "enquire.js": "^2.1.6",
     "gulp-favicons": "latest",
     "js-plugin-circliful": "^2.0.15",
     "magnific-popup": "latest",
