@@ -9,7 +9,7 @@ export let sendForm = $('#quizForm')
 		successTitle: '',
 		successText: '',
 		errorMessPlace: '.quiz__get-phone-field--js',
-		debug: false,
+		debug: true,
 	}, () => {
 		$whiteWrap.removeClass('white-wrap--inactive')
 			.parent()

@@ -2,7 +2,7 @@ mixin quiz-quest-block(id, answers, descr, title)
     .row.no-gutters.mt-xl-60.mt-30
         .col-lg-auto
             .pr-lg-60
-                input(type="hidden" name=`quiz-${id}[]` value= title)
+                input(type="hidden" name=`quiz-${id}[title]` value= title)
 
                 - var i = 1;
                 each item in answers

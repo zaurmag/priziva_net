@@ -4,6 +4,33 @@ $formGo = $formData["go"]; ?>
 
 <?php if(isset($formData)) {
 
+    // 1
+    $quizTitle1 = $formData["quiz-1"]["title"];
+    $quizAnswer1 = $formData["quiz-1"]["answers"];
+
+    // 2
+    $quizTitle2 = $formData["quiz-2"]["title"];
+    $quizAnswer2 = $formData["quiz-2"]["answers"];
+
+    // 3
+    $quizTitle3 = $formData["quiz-3"]["title"];
+    $quizAnswer3 = $formData["quiz-3"]["answers"];
+
+    // 4
+    $quizTitle4 = $formData["quiz-4"]["title"];
+    $quizAnswer4 = $formData["quiz-4"]["answers"];
+
+    // 5
+    $quizTitle5 = $formData["quiz-5"]["title"];
+    $quizAnswer5 = $formData["quiz-5"]["answers"];
+
+    // 6
+    $quizTitle6 = $formData["quiz-6"]["title"];
+    $quizAnswer6 = $formData["quiz-6"]["answers"];
+
+    $result = $formData["getResult"];
+    $phone = $formData["phone"];
+
     // ===== Reference ============================
     $recaptchaOn = false;
 
@@ -19,7 +46,6 @@ $formGo = $formData["go"]; ?>
     $fromEmail = "no-reply@zaurmag.ru"; // E-mail от имени которого приходит письмо. Почта на домене сайта.
     $subject = "Коуч - Заявка с сайта...";
 
-
     function adopt($text) {
         return '=?UTF-8?B?'.base64_encode($text).'?=';
     }
@@ -34,29 +60,77 @@ $formGo = $formData["go"]; ?>
         "getResult" => "Как вам удобнее получить результат:",
     );
 
-    foreach($formData as $key => $value) {
-        if (is_array($value)) {
-            foreach ($value as $k => $val) {
-                $message .= "<tr>";
-                $message .= "<td style='width: 350px;padding-top: 15px'>";
-                $message .= "<strong>". $value[0]. "</strong>";
-                $message .= "</td>";
-                $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
-                $message .= "$value[answers]";
-                $message .= "</td>";
-                $message .= "</tr>";
-            }
-        } else {
-            $message .= "<tr>";
-            $message .= "<td style='padding-top: 20px'>";
-            $message .= "<strong>" . $title[$key] . "</strong>";
-            $message .= "</td>";
-            $message .= "<td style='padding-left:12px;padding-top: 20px'>";
-            $message .= "$value";
-            $message .= "</td>";
-            $message .= "</tr>";
-        }
-    }
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>$quizTitle1</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+    $message .= "$quizAnswer1";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>$quizTitle2</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+    $message .= "$quizAnswer2";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>$quizTitle3</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+    $message .= "$quizAnswer3";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>$quizTitle4</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+    $message .= "$quizAnswer4";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>$quizTitle5</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+    $message .= "$quizAnswer5";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>$quizTitle6</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px' valign='top'>";
+    $message .= "$quizAnswer6";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>Как удобнее получить результат:</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px'>";
+    $message .= "$result";
+    $message .= "</td>";
+    $message .= "</tr>";
+
+    $message .= "<tr>";
+    $message .= "<td style='width: 350px;padding-top: 15px'>";
+    $message .= "<strong>Телефон:</strong>";
+    $message .= "</td>";
+    $message .= "<td style='padding-left:15px;padding-top: 15px'>";
+    $message .= "$phone";
+    $message .= "</td>";
+    $message .= "</tr>";
 
     $message .= "</table><br><br>";
     $message .= '</body></html>';

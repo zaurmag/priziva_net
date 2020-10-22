@@ -88,7 +88,7 @@ export default class Quiz {
 			// Показываем блок результата, но пока скрытым
 			this.elements.whiteWrap.parentNode.classList.remove('d-none');
 			this.elements.whiteWrap.classList.add('white-wrap--inactive');
-			animateScroll($(document.getElementById('result')), 700);
+			// animateScroll($(document.getElementById('result')), 700);
 		});
 		// Скрываем кнопки навигации
 		btns.style.display = 'none';
