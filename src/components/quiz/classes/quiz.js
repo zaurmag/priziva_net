@@ -1,4 +1,5 @@
 import {animationPercent} from '../../spinner-block/spinner-block';
+import {animateScroll} from '../../../vendor/animate-scroll';
 
 export default class Quiz {
 	constructor(questions, results, elements) {
@@ -21,13 +22,6 @@ export default class Quiz {
 		this.elements = elements;
 	}
 
-	render(elements, val) {
-		const el = elements;
-		if (el) {
-			return el;
-		}
-	}
-
 	change(event) {
 		if (this.current < this.questions.length) {
 			this.showBlock();
@@ -42,6 +36,9 @@ export default class Quiz {
 				this.elements.score.forEach((element) => {
 					element.innerText = this.score;
 				});
+
+				const main = document.getElementById('main');
+				animateScroll($(main), 400);
 			}
 		} else {
 			this.hideBlock();

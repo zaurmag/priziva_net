@@ -275,7 +275,7 @@ function init() {
 
 			setTimeout(() => {
 				bindNext(event);
-			}, 1000);
+			}, 700);
 		});
 	}
 }
