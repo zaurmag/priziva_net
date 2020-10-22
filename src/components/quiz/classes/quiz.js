@@ -1,5 +1,6 @@
 import {animationPercent} from '../../spinner-block/spinner-block';
 import {animateScroll} from '../../../vendor/animate-scroll';
+const main = document.getElementById('main');
 
 export default class Quiz {
 	constructor(questions, results, elements) {
@@ -36,10 +37,10 @@ export default class Quiz {
 				this.elements.score.forEach((element) => {
 					element.innerText = this.score;
 				});
-
-				const main = document.getElementById('main');
-				animateScroll($(main), 400);
 			}
+
+			// Плавно скроллим до верхнего блока контейнера
+			animateScroll($(main), 700);
 		} else {
 			this.hideBlock();
 			this.progress(true);
