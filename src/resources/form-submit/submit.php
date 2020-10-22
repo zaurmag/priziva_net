@@ -14,7 +14,7 @@ $formGo = $formData["go"]; ?>
     /**
      * Vars
      */
-    $to = "demo@zaurmag.ru"; // E-mail на который присылать письмо
+    $to = "demo@zaurmag.ru, quiz24-job@yandex.ru"; // E-mail на который присылать письмо
     $fromName = 'Коуч';
     $fromEmail = "no-reply@zaurmag.ru"; // E-mail от имени которого приходит письмо. Почта на домене сайта.
     $subject = "Коуч - Заявка с сайта...";

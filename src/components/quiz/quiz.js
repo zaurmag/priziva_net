@@ -137,7 +137,7 @@ export const quiz = new Quiz(questions, results,
 let toHTMLBad = (results) => {
 	// console.log(id);
 	return `
-		<div class="result-block" data-quest_id="${results.dataId}">
+		<div class="result-block" data-quest_id="${results.questId}">
 			<div class="result-block__title">${results.title}</div>
 			<div class="row">
 				<div class="col-lg-auto text-center">
@@ -179,7 +179,7 @@ let toHTMLBad = (results) => {
 
 let toHTMLGood = (results) => {
 	return `
-		<div class="result-block" data-quest_id="${results.dataId}">
+		<div class="result-block" data-quest_id="${results.questId}">
 		    <div class="result-block__title">${results.title}</div>
 		    <div class="row">
 		        <div class="col-lg-auto text-center">
@@ -204,7 +204,7 @@ let toHTMLGood = (results) => {
 
 function render(id, index) {
 	let newArr = [];
-	const resultBlock = document.getElementById('resultContainerBlocks');
+	const resultBlocks = document.getElementById('resultContainerBlocks');
 
 	function checkNode(obj, fEl) {
 		return obj.indexOf(fEl);
@@ -212,13 +212,18 @@ function render(id, index) {
 
 	function insertHTML(tohtml) {
 		let html = newArr.map(tohtml).join('');
-		resultBlock.insertAdjacentHTML('beforeend', html);
-		const resultBlockText = resultBlock.getElementsByClassName('result-block__text');
+		resultBlocks.insertAdjacentHTML('beforeend', html);
+		const resultBlockText = resultBlocks.getElementsByClassName('result-block__text');
 
 		let issetNode = checkNode(newArr[0].text, resultBlockText[0].innerHTML);
-		const resultBlockChildren = resultBlock.children[1];
-		if (issetNode === 0 && resultBlockChildren) {
-			resultBlockChildren.remove();
+		const resultBlocksChildren = resultBlocks.children[1];
+		if (issetNode === 0 && resultBlocksChildren) {
+			resultBlocksChildren.remove();
+		}
+		if (resultBlocksChildren) {
+			for (let i = 0; i < resultBlocks.children.length; i++) {
+				// console.log(resultBlocks.children[i]);
+			}
 		}
 	}
 
@@ -229,9 +234,10 @@ function render(id, index) {
 					newArr.push(results[i].answers[n]);
 					const ifGood = results[i].answers[n].check();
 
-					if (results[i].id === id) {
-						console.log(' 343434343 ');
-					}
+					// if (results[i].id === id) {
+					// 	console.log(' 343434343 ');
+					// }
+					console.log(newArr);
 
 					if (ifGood) {
 						insertHTML(toHTMLGood);

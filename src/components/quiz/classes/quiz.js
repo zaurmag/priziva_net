@@ -35,14 +35,6 @@ export default class Quiz {
 			if (event) {
 				const {index} = event.target.dataset;
 
-				// let result = [];
-				// let resultVal = this.results[this.current - 1].answers[index - 1].check();
-				// result.push(this.results[this.current - 1].answers[index - 1]);
-				//
-				// result.forEach((el) => {
-				// 	this.render(el, resultVal);
-				// });
-
 				// Добавляем очки
 				let value = this.questions[this.current - 1].answers[index - 1].change();
 				this.score += value;
