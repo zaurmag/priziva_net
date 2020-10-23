@@ -278,7 +278,7 @@ function init() {
 			render(questId, index);
 
 			setTimeout(() => {
-				bindNext(event);
+				bindNext(event, questId);
 			}, 700);
 		});
 	}

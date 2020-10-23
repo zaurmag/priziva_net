@@ -1,5 +1,6 @@
 import {animationPercent} from '../../spinner-block/spinner-block';
 import {animateScroll} from '../../../vendor/animate-scroll';
+import {quiz} from '../quiz';
 const main = document.getElementById('main');
 
 export default class Quiz {
@@ -58,8 +59,32 @@ export default class Quiz {
 		}
 	}
 
+	checkBtn(event, questID) {
+		if (event) {
+			const nextQuest = document.getElementById(questID).nextElementSibling;
+			const checks = nextQuest.querySelectorAll('input[type="radio"]:checked');
+			const nextBtn = this.elements.nextBtn;
+
+			console.log(checks.length);
+			addClassBtn(nextBtn);
+
+			if (checks.length) {
+				addClassBtn(nextBtn);
+			} else {
+				nextBtn.classList.remove('is-active');
+				nextBtn.classList.remove('btn-flare');
+				nextBtn.classList.add('btn-secondary');
+			}
+		}
+
+		function addClassBtn(btn) {
+			btn.classList.add('is-active');
+			btn.classList.add('btn-flare');
+		}
+	}
+
 	// Переход к следующему вопросу
-	next(event) {
+	next(event, questID) {
 		this.current++;
 
 		if (this.current >= this.questions.length) {
@@ -67,8 +92,11 @@ export default class Quiz {
 		}
 
 		this.change(event);
-		this.elements.nextBtn.classList.add('is-active');
-		this.elements.nextBtn.classList.add('btn-flare');
+		// this.checkBtn(event, questID);
+		const nextBtn = this.elements.nextBtn;
+
+		nextBtn.classList.add('is-active');
+		nextBtn.classList.add('btn-flare');
 	}
 
 	// Переход к предыдущему вопросу
