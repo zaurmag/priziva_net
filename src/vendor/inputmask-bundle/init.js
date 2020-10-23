@@ -1,4 +1,6 @@
-import {quiz} from '../../components/quiz/quiz';
+// import {form} from '../../components/form/form';
+
+// console.log(sendForm);
 
 jQuery(document).ready(($) => {
 	const $phoneMask = $('.phone-mask--js');
@@ -6,14 +8,17 @@ jQuery(document).ready(($) => {
 
 	$phoneMask.inputmask({
 		mask: '9 (999) 999-99-99',
-		// showMaskOnHover: false
-	});
-
-	$phoneMask.on('keyup', () => {
-		if ($phoneMask.val().indexOf('_') != -1 || $phoneMask.val() === '') {
+		onincomplete: function () {
 			$btnSubmit.removeClass('btn-primary btn-flare').addClass('btn-secondary');
-		} else {
+			$($(this)[0]).removeClass('is-complete');
+			$($(this)[0]).addClass('is-incomplete');
+		},
+
+		oncomplete: function () {
 			$btnSubmit.removeClass('btn-secondary').addClass('btn-primary btn-flare');
-		}
+			$($(this)[0]).addClass('is-complete');
+			$($(this)[0]).removeClass('is-incomplete');
+		},
+		// showMaskOnHover: false
 	});
 });

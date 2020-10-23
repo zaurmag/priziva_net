@@ -40,13 +40,7 @@
 			$(this).submit(function (event) {
 				let data = $(this).serialize();
 				let btnClass = 'is-sending';
-
-				if ($this[0].checkValidity() === false) {
-					$this.addClass('was-validated');
-					errorRes('Чтобы получить результат, введите телефон!');
-
-					return false;
-				}
+				const phone = $this.find('input[type="tel"]');
 
 				function errorRes(errorMessage) {
 					btn.removeClass(btnClass);
@@ -58,6 +52,20 @@
 					setTimeout(() => {
 						$this.find('.form__error').remove();
 					}, 4000);
+				}
+
+				if ($this[0].checkValidity() === false) {
+					$this.addClass('was-validated');
+					errorRes('Чтобы получить результат, введите телефон!');
+
+					return false;
+				}
+
+				if (phone.length && !phone.hasClass('is-complete')) {
+					$this.addClass('was-validated');
+					errorRes('Введите корректный номер телефона!');
+
+					return false;
 				}
 
 				$.ajax({
